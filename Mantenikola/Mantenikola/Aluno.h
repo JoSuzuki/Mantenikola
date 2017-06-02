@@ -5,7 +5,6 @@ using namespace std;
 class Aluno
 {
 private:
-	//risos
 	string nome;
 	int id;
 	string numeroUsp;

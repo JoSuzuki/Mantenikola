@@ -131,13 +131,16 @@
   <ItemGroup>
     <ClCompile Include="Aluno.cpp" />
     <ClCompile Include="AlunoDAO.cpp" />
+    <ClCompile Include="Motor.cpp" />
+    <ClCompile Include="MotorDAO.cpp" />
     <ClCompile Include="MyDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Aluno.h" />
     <ClInclude Include="AlunoDAO.h" />
+    <ClInclude Include="Motor.h" />
+    <ClInclude Include="MotorDAO.h" />
     <ClInclude Include="MyDAO.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
