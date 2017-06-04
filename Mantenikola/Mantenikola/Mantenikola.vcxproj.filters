@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Aluno.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AlunoDAO.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MyDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -35,12 +29,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Aluno.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AlunoDAO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MyDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
