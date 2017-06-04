@@ -71,10 +71,10 @@ int MotorDAO::inserir(Motor* motor)
 		sql::Statement *stmt;
 		sql::ResultSet *res;
 		stmt = con->createStatement();
-		int nome = motor->getNumeroDeSerie();
-		System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
-		
-		stmt->execute("INSERT INTO alunos(nome, numero_usp) VALUES ('" + nome + "', '" + numeroUsp + "')");
+		string numeroDeSerie = to_string(motor->getNumeroDeSerie());
+		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
+		string estado = motor->getEstado();
+		stmt->execute("INSERT INTO alunos(nome, numero_usp) VALUES ("+ numeroDeSerie+ ", '" + estado + "')");
 	}
 	catch (sql::SQLException &e) {
 
