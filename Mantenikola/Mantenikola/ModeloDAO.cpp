@@ -1,4 +1,4 @@
-#include "motorDAO.h"
+#include "modeloDAO.h"
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/resultset.h>
@@ -6,13 +6,14 @@
 #include <cppconn/prepared_statement.h>
 
 
-MotorDAO::MotorDAO()
+ModeloDAO::ModeloDAO()
 {
 }
 
-Motor* MotorDAO::getMotor(int numeroDeSerie)
+
+Modelo* ModeloDAO::getModelo(string nome)
 {
-	Motor* motor = nullptr;
+	Modelo* modelo = nullptr;
 	try {
 		/* INSERT TUTORIAL CODE HERE! */
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
@@ -20,11 +21,10 @@ Motor* MotorDAO::getMotor(int numeroDeSerie)
 		sql::Statement *stmt;
 		sql::ResultSet *res;
 		stmt = con->createStatement();
-		string parametro1 = std::to_string(numeroDeSerie);
-		res = stmt->executeQuery("SELECT nome, numero_usp, id from alunos where id = " + parametro1);
+		res = stmt->executeQuery("SELECT nome, numero_usp, id from alunos where id = " + nome);
 
 		while (res->next()) {
-			motor = new Motor();
+			modelo = new Modelo(res->getString("nome"));
 			//motor->setId(res->getInt("id"));
 			//motor->setNome(res->getString("nome"));
 			//motor->setNumeroUsp(res->getString("numero_usp"));
@@ -51,13 +51,24 @@ Motor* MotorDAO::getMotor(int numeroDeSerie)
 
 		return nullptr;
 	}
-	cout << "Done::GetMotor" << endl;
-	return motor;
+	cout << "Done::GetModelo" << endl;
+	return modelo;
 }
 
-vector<Motor*> MotorDAO::getMotores()
+vector<Modelo*> ModeloDAO::getModelos()
 {
-	return vector<Motor*>();
+	vector<Modelo*> vetorDeModelos;
+	sql::Connection * c = MyDAO::getInstance()->getConnection();
+	std::unique_ptr<sql::Connection> con(c);
+	sql::Statement *stmt;
+	sql::ResultSet *res;
+	stmt = con->createStatement();
+	res = stmt->executeQuery("SELECT nome from Modelo");
+
+
+
+
+	return vector<Modelo*>();
 }
 
 int MotorDAO::inserir(Motor* motor)
@@ -71,7 +82,7 @@ int MotorDAO::inserir(Motor* motor)
 		string numeroDeSerie = to_string(motor->getNumeroDeSerie());
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 		string estado = motor->getEstado();
-		stmt->execute("INSERT INTO alunos(nome, numero_usp) VALUES ("+ numeroDeSerie+ ", '" + estado + "')");
+		stmt->execute("INSERT INTO alunos(nome, numero_usp) VALUES (" + numeroDeSerie + ", '" + estado + "')");
 	}
 	catch (sql::SQLException &e) {
 

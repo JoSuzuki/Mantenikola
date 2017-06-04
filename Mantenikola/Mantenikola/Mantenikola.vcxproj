@@ -129,12 +129,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControladorCadastroDeMotor.cpp" />
+    <ClCompile Include="Modelo.cpp" />
+    <ClCompile Include="ModeloDAO.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="MotorDAO.cpp" />
     <ClCompile Include="MyDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControladorCadastroDeMotor.h" />
+    <ClInclude Include="Modelo.h" />
+    <ClInclude Include="ModeloDAO.h" />
     <ClInclude Include="Motor.h" />
     <ClInclude Include="MotorDAO.h" />
     <ClInclude Include="MyDAO.h" />
