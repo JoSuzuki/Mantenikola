@@ -1,4 +1,5 @@
 #include "Motor.h"
+#include "MotorDAO.h"
 
 Motor::Motor()
 {
@@ -13,6 +14,16 @@ int Motor::getNumeroDeSerie()
 string Motor::getDataDeDesativacao()
 {
 	return this->dataDeDesativacao;
+}
+
+bool Motor::existeMotor(int numeroDeSerie, string modelo)
+{
+	return MotorDAO::existeMotor(numeroDeSerie,modelo);
+}
+
+void Motor::cadastrarMotor(int numeroDeSerie, string modelo)
+{
+	MotorDAO::cadastrarMotor(numeroDeSerie, modelo);
 }
 
 

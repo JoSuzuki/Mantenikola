@@ -9,9 +9,10 @@ class MotorDAO
 {
 public:
 	MotorDAO();
-	Motor* getMotor(int numeroDeSerie);
+	Motor* getMotor(int numeroDeSerie, string modelo);
 	vector<Motor*> getMotores();
-	int inserir(Motor * motor);
+	static bool existeMotor(int numeroDeSerie, string modelo);
+	static void cadastrarMotor(int numeroDeSerie, string modelo);
 	virtual ~MotorDAO();
 };
 

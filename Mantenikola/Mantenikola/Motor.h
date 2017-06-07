@@ -12,6 +12,8 @@ public:
 	Motor();
 	int getNumeroDeSerie();
 	string getDataDeDesativacao();
+	static bool existeMotor(int numeroDeSerie, string modelo);
+	static void cadastrarMotor(int numeroDeSerie, string modelo);
 	string getEstado();
 	virtual ~Motor();
 };
