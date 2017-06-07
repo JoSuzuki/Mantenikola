@@ -1,6 +1,9 @@
 #pragma once
 
 #include<string>
+#include"ControladorCadastroDeMotor.h"
+#include"PopupMotorJaCadastrado.h"
+#include <msclr\marshal_cppstd.h>
 
 
 namespace Mantenikola {
@@ -15,16 +18,21 @@ namespace Mantenikola {
 	/// <summary>
 	/// Summary for TelaCadastro
 	/// </summary>
+
+	//string listaModelos;
+	//string listaProprietarios;
+
 	public ref class TelaCadastro : public System::Windows::Forms::Form
 	{
 	public:
 		TelaCadastro(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			ControladorCadastroDeMotor::getModelos();
+			ControladorCadastroDeMotor::getProprietarios();
+			
 		}
+
 
 	protected:
 		/// <summary>
@@ -85,6 +93,7 @@ namespace Mantenikola {
 			// 
 			// botãoRetornar
 			// 
+			this->botãoRetornar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->botãoRetornar->Location = System::Drawing::Point(348, 266);
 			this->botãoRetornar->Name = L"botãoRetornar";
 			this->botãoRetornar->Size = System::Drawing::Size(100, 36);
@@ -95,6 +104,8 @@ namespace Mantenikola {
 			// 
 			// cbModelo
 			// 
+			this->cbModelo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->cbModelo->FormattingEnabled = true;
 			this->cbModelo->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Modelo1", L"Modelo2", L"Modelo3" });
 			this->cbModelo->Location = System::Drawing::Point(214, 176);
@@ -104,6 +115,7 @@ namespace Mantenikola {
 			// 
 			// botãoCadastrar
 			// 
+			this->botãoCadastrar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->botãoCadastrar->Location = System::Drawing::Point(67, 266);
 			this->botãoCadastrar->Name = L"botãoCadastrar";
 			this->botãoCadastrar->Size = System::Drawing::Size(100, 36);
@@ -150,6 +162,7 @@ namespace Mantenikola {
 			// 
 			// label5
 			// 
+			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(214, 113);
 			this->label5->Name = L"label5";
@@ -168,6 +181,8 @@ namespace Mantenikola {
 			// 
 			// cbProprietario
 			// 
+			this->cbProprietario->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->cbProprietario->FormattingEnabled = true;
 			this->cbProprietario->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Jão", L"Toninho", L"Baltazar" });
 			this->cbProprietario->Location = System::Drawing::Point(214, 224);
@@ -177,6 +192,8 @@ namespace Mantenikola {
 			// 
 			// textoNumeroDeSerie
 			// 
+			this->textoNumeroDeSerie->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->textoNumeroDeSerie->Location = System::Drawing::Point(214, 90);
 			this->textoNumeroDeSerie->Name = L"textoNumeroDeSerie";
 			this->textoNumeroDeSerie->Size = System::Drawing::Size(121, 20);
@@ -184,6 +201,8 @@ namespace Mantenikola {
 			// 
 			// textoDataDeEntrada
 			// 
+			this->textoDataDeEntrada->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
 			this->textoDataDeEntrada->Location = System::Drawing::Point(214, 145);
 			this->textoDataDeEntrada->Name = L"textoDataDeEntrada";
 			this->textoDataDeEntrada->Size = System::Drawing::Size(121, 20);
@@ -235,7 +254,21 @@ namespace Mantenikola {
 	}
 
 	private: System::Void botãoCadastrar_Click(System::Object^  sender, System::EventArgs^  e) {
+		int nSerie =int::Parse(textoNumeroDeSerie->Text);
+		string data = msclr::interop::marshal_as<string>(textoDataDeEntrada->Text);
+		string modelo = msclr::interop::marshal_as<string>(cbModelo->Text);
+		int idProprietario = int::Parse(cbProprietario->Text);
+		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
+		//if (ControladorCadastroDeMotor::existeMotor(nSerie,modelo)) {
+			//ControladorCadastroDeMotor::cadastrarMotor(nSerie, data, modelo, idProprietario);
+		//}
+		//else {
+		PopupMotorJaCadastrado ^popup = gcnew PopupMotorJaCadastrado();
+		popup->ShowDialog();
+		this->Close();
+		//}
 
+		
 	}
 	private: System::Void TelaCadastro_Load(System::Object^  sender, System::EventArgs^  e) {
 	}

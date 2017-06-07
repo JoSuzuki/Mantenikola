@@ -145,6 +145,7 @@
     <ClCompile Include="MyDAO.cpp" />
     <ClCompile Include="PessoaFisica.cpp" />
     <ClCompile Include="PessoaJuridica.cpp" />
+    <ClCompile Include="PopupMotorJaCadastrado.cpp" />
     <ClCompile Include="Proprietario.cpp" />
     <ClCompile Include="ProprietarioDAO.cpp" />
     <ClCompile Include="TelaCadastro.cpp" />
@@ -162,6 +163,9 @@
     <ClInclude Include="MyDAO.h" />
     <ClInclude Include="PessoaFisica.h" />
     <ClInclude Include="PessoaJuridica.h" />
+    <ClInclude Include="PopupMotorJaCadastrado.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Proprietario.h" />
     <ClInclude Include="ProprietarioDAO.h" />
     <ClInclude Include="TelaCadastro.h">
@@ -184,6 +188,9 @@
   <ItemGroup>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
+      <DependentUpon>PopupMotorJaCadastrado.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <DependentUpon>TelaCadastro.h</DependentUpon>
