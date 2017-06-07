@@ -148,6 +148,7 @@
     <ClCompile Include="Proprietario.cpp" />
     <ClCompile Include="ProprietarioDAO.cpp" />
     <ClCompile Include="TelaCadastro.cpp" />
+    <ClCompile Include="TelaRelatorios.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControladorCadastroDeMotor.h" />
@@ -164,6 +165,9 @@
     <ClInclude Include="Proprietario.h" />
     <ClInclude Include="ProprietarioDAO.h" />
     <ClInclude Include="TelaCadastro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="TelaRelatorios.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <DependentUpon>TelaCadastro.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaRelatorios.resx">
+      <DependentUpon>TelaRelatorios.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

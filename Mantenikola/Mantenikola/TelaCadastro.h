@@ -3,7 +3,7 @@
 #include<string>
 
 
-namespace Project1 {
+namespace Mantenikola {
 
 	using namespace System;
 	using namespace System::ComponentModel;

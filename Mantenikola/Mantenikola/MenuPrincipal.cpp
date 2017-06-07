@@ -6,6 +6,6 @@ void Main(array<String^>^ args)
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	Project1::MenuPrincipal tela;
+	Mantenikola::MenuPrincipal tela;
 	Application::Run(%tela);
 }

@@ -1,8 +1,9 @@
 #pragma once
 
 #include"TelaCadastro.h"
+#include"TelaRelatorios.h"
 
-namespace Project1 {
+namespace Mantenikola {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -37,6 +38,7 @@ namespace Project1 {
 			}
 		}
 	private: System::Windows::Forms::Button^  botãoCadastroMotor;
+	private: System::Windows::Forms::Button^  botãoRelatórios;
 	protected:
 
 	private:
@@ -53,6 +55,7 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			this->botãoCadastroMotor = (gcnew System::Windows::Forms::Button());
+			this->botãoRelatórios = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// botãoCadastroMotor
@@ -60,7 +63,7 @@ namespace Project1 {
 			this->botãoCadastroMotor->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->botãoCadastroMotor->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Blue;
-			this->botãoCadastroMotor->Location = System::Drawing::Point(116, 119);
+			this->botãoCadastroMotor->Location = System::Drawing::Point(120, 178);
 			this->botãoCadastroMotor->Name = L"botãoCadastroMotor";
 			this->botãoCadastroMotor->Size = System::Drawing::Size(158, 111);
 			this->botãoCadastroMotor->TabIndex = 0;
@@ -68,11 +71,22 @@ namespace Project1 {
 			this->botãoCadastroMotor->UseVisualStyleBackColor = true;
 			this->botãoCadastroMotor->Click += gcnew System::EventHandler(this, &MenuPrincipal::botãoCadastroMotor_Click);
 			// 
+			// botãoRelatórios
+			// 
+			this->botãoRelatórios->Location = System::Drawing::Point(120, 38);
+			this->botãoRelatórios->Name = L"botãoRelatórios";
+			this->botãoRelatórios->Size = System::Drawing::Size(158, 111);
+			this->botãoRelatórios->TabIndex = 1;
+			this->botãoRelatórios->Text = L"Apresentar relatórios";
+			this->botãoRelatórios->UseVisualStyleBackColor = true;
+			this->botãoRelatórios->Click += gcnew System::EventHandler(this, &MenuPrincipal::botãoRelatórios_Click);
+			// 
 			// MenuPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(391, 333);
+			this->Controls->Add(this->botãoRelatórios);
 			this->Controls->Add(this->botãoCadastroMotor);
 			this->Name = L"MenuPrincipal";
 			this->Text = L"MenuPrincipal";
@@ -88,6 +102,12 @@ namespace Project1 {
 		this->Show();
 	}
 	private: System::Void MenuPrincipal_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+	private: System::Void botãoRelatórios_Click(System::Object^  sender, System::EventArgs^  e) {
+		this->Hide();
+		TelaRelatorios ^relatorio = gcnew TelaRelatorios();
+		relatorio->ShowDialog();
+		this->Show();
 	}
 	};
 }
