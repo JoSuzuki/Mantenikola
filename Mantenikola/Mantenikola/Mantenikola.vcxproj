@@ -43,7 +43,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -100,10 +100,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\pcs3443\boost_1_64_0;D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalDependencies />
+      <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,12 +124,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Downloads\Softwares\bibliotecasvisual\mysql-connector-c++-noinstall-1.1.9-winx64\include;D:\Downloads\Softwares\bibliotecasvisual\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\include;D:\pcs3443\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>false</ShowIncludes>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Downloads\Softwares\bibliotecasvisual\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
@@ -137,7 +143,6 @@
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="MotorDAO.cpp" />
     <ClCompile Include="MyDAO.cpp" />
-    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="PessoaFisica.cpp" />
     <ClCompile Include="PessoaJuridica.cpp" />
     <ClCompile Include="Proprietario.cpp" />
@@ -154,9 +159,6 @@
     <ClInclude Include="Motor.h" />
     <ClInclude Include="MotorDAO.h" />
     <ClInclude Include="MyDAO.h" />
-    <ClInclude Include="MyForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="PessoaFisica.h" />
     <ClInclude Include="PessoaJuridica.h" />
     <ClInclude Include="Proprietario.h" />

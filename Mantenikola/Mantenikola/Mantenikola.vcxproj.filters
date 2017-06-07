@@ -18,9 +18,6 @@
     <ClCompile Include="MyDAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Motor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -57,9 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyDAO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Motor.h">
