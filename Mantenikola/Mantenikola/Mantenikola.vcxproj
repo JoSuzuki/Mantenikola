@@ -131,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ControladorCadastroDeMotor.cpp" />
+    <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="Modelo.cpp" />
     <ClCompile Include="ModeloDAO.cpp" />
     <ClCompile Include="Motor.cpp" />
@@ -141,9 +142,13 @@
     <ClCompile Include="PessoaJuridica.cpp" />
     <ClCompile Include="Proprietario.cpp" />
     <ClCompile Include="ProprietarioDAO.cpp" />
+    <ClCompile Include="TelaCadastro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControladorCadastroDeMotor.h" />
+    <ClInclude Include="MenuPrincipal.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Modelo.h" />
     <ClInclude Include="ModeloDAO.h" />
     <ClInclude Include="Motor.h" />
@@ -156,6 +161,9 @@
     <ClInclude Include="PessoaJuridica.h" />
     <ClInclude Include="Proprietario.h" />
     <ClInclude Include="ProprietarioDAO.h" />
+    <ClInclude Include="TelaCadastro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -166,6 +174,14 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtostestes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadastro.resx">
+      <DependentUpon>TelaCadastro.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
