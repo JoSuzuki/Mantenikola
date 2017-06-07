@@ -4,6 +4,7 @@ PessoaFisica::PessoaFisica() : Proprietario()
 {
 }
 
+
 int PessoaFisica::getTipo()
 {
 	return 0;

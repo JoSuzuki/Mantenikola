@@ -1,4 +1,6 @@
 #include "proprietarioDAO.h"
+#include "PessoaFisica.h"
+#include "PessoaJuridica.h"
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/resultset.h>
@@ -65,7 +67,7 @@ vector<Proprietario*> ProprietarioDAO::getProprietarios()
 	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario");
 	while (res->next()) {
 		if (res->getBoolean("Tipo_CPF_CNPJ")) {
-			proprietario = new PessoaFisica();
+			proprietario = new PessoaJuridica();
 		}
 		else {
 			proprietario = new PessoaFisica();

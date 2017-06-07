@@ -1,16 +1,16 @@
 #pragma once
-#include <iostream>
 #include <vector>
+#include <iostream>
 #include <sstream>
-#include "PessoaFisica.h"
-#include "PessoaJuridica.h"
 #include "MyDAO.h"
+#include "Proprietario.h"
+
 using namespace std;
 class ProprietarioDAO
 {
 public:
 	ProprietarioDAO();
 	Proprietario* getProprietario(int id);
-	vector<Proprietario*> getProprietarios();
+	static vector<Proprietario*> getProprietarios();
 	virtual ~ProprietarioDAO();
 };
