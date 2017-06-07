@@ -71,6 +71,7 @@ int MotorDAO::inserir(Motor* motor)
 		string numeroDeSerie = to_string(motor->getNumeroDeSerie());
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 		string estado = motor->getEstado();
+		
 		stmt->execute("INSERT INTO alunos(nome, numero_usp) VALUES ("+ numeroDeSerie+ ", '" + estado + "')");
 	}
 	catch (sql::SQLException &e) {

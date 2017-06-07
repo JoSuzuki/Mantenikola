@@ -136,6 +136,10 @@
     <ClCompile Include="MotorDAO.cpp" />
     <ClCompile Include="MyDAO.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="PessoaFisica.cpp" />
+    <ClCompile Include="PessoaJuridica.cpp" />
+    <ClCompile Include="Proprietario.cpp" />
+    <ClCompile Include="ProprietarioDAO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControladorCadastroDeMotor.h" />
@@ -147,6 +151,10 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="PessoaFisica.h" />
+    <ClInclude Include="PessoaJuridica.h" />
+    <ClInclude Include="Proprietario.h" />
+    <ClInclude Include="ProprietarioDAO.h" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -1,4 +1,4 @@
-#include "modeloDAO.h"
+#include "proprietarioDAO.h"
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/resultset.h>
@@ -6,33 +6,31 @@
 #include <cppconn/prepared_statement.h>
 
 
-ModeloDAO::ModeloDAO()
+ProprietarioDAO::ProprietarioDAO()
 {
 }
 
-
-Modelo* ModeloDAO::getModelo(string nome)
+Proprietario* ProprietarioDAO::getProprietario(int id)
 {
-	Modelo* modelo = nullptr;
+	Proprietario* proprietario = nullptr;
 	try {
-		/* INSERT TUTORIAL CODE HERE! */
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
 		std::unique_ptr<sql::Connection> con(c);
 		sql::Statement *stmt;
 		sql::ResultSet *res;
 		stmt = con->createStatement();
-		res = stmt->executeQuery("SELECT nome, numero_usp, id from alunos where id = " + nome);
-
+		string parametro1 = std::to_string(id);
+		res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario where Id = " + parametro1);
 		while (res->next()) {
-			modelo = new Modelo(res->getString("nome"));
-			//motor->setId(res->getInt("id"));
-			//motor->setNome(res->getString("nome"));
-			//motor->setNumeroUsp(res->getString("numero_usp"));
+			if (res->getBoolean("Tipo_CPF_CNPJ")) {
+				proprietario = new PessoaFisica();
+			}
+			else {
+				proprietario = new PessoaFisica();
+			}
 		}
 		delete res;
 		delete stmt;
-		// We need not check the return value explicitly. If it indicates
-		// an error, Connector/C++ generates an exception.
 	}
 	catch (sql::SQLException &e) {
 		/*
@@ -51,28 +49,34 @@ Modelo* ModeloDAO::getModelo(string nome)
 
 		return nullptr;
 	}
-	cout << "Done::GetModelo" << endl;
-	return modelo;
+	cout << "Done::GetProprietario" << endl;
+	return proprietario;
 }
 
-vector<Modelo*> ModeloDAO::getModelos()
+vector<Proprietario*> ProprietarioDAO::getProprietarios()
 {
-	vector<Modelo*> vetorDeModelos;
+	vector<Proprietario*> vetorDeProprietarios;
+	Proprietario* proprietario = nullptr;
 	sql::Connection * c = MyDAO::getInstance()->getConnection();
 	std::unique_ptr<sql::Connection> con(c);
 	sql::Statement *stmt;
 	sql::ResultSet *res;
 	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT nome from Modelo");
+	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario");
 	while (res->next()) {
-		Modelo* modelo = new Modelo(res->getString("nome"));
-		vetorDeModelos.push_back(modelo);
+		if (res->getBoolean("Tipo_CPF_CNPJ")) {
+			proprietario = new PessoaFisica();
+		}
+		else {
+			proprietario = new PessoaFisica();
+		}
+		vetorDeProprietarios.push_back(proprietario);
 	}
-	return vetorDeModelos;
+	return vetorDeProprietarios;
 }
 
 
-ModeloDAO::~ModeloDAO()
-{
 
+ProprietarioDAO::~ProprietarioDAO()
+{
 }

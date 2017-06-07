@@ -12,6 +12,6 @@ public:
 	Modelo* getModelo(string nome);
 	vector<Modelo*> getModelos();
 	//int inserir(Motor * motor);
-	virtual ~MotorDAO();
+	virtual ~ModeloDAO();
 };
 
