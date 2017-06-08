@@ -9,14 +9,14 @@ MyDAO* MyDAO::instance = 0;
 
 MyDAO::MyDAO()
 {
-	//url = "labprog.pcs.usp.br"; //usar esta url para se conectar desde fora do labprog
-	url = "server"; // usar esta para se conectar desde dentro do labprog
+	url = "labprog.pcs.usp.br"; //usar esta url para se conectar desde fora do labprog
+	//url = "server"; // usar esta para se conectar desde dentro do labprog
 	
 	//usar as credenciais próprias de cada grupo. neste exemplo, estou usando o banco
 	//teste
-	user = "teste"; 
-	pass = "teste";
-	database = "teste";
+	user = "g1b"; 
+	pass = "g0tibxHR";
+	database = "g1b";
 
 	try {
 		/* INSERT TUTORIAL CODE HERE! */

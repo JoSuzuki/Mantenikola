@@ -57,6 +57,12 @@
     <ClCompile Include="PopupMotorJaCadastrado.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Falha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FalhaDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyDAO.h">
@@ -101,8 +107,28 @@
     <ClInclude Include="PopupMotorJaCadastrado.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Falha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FalhaDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtostestes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCadastro.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaRelatorios.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

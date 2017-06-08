@@ -24,7 +24,7 @@ Proprietario* ProprietarioDAO::getProprietario(int id)
 		string parametro1 = std::to_string(id);
 		res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario where Id = " + parametro1);
 		while (res->next()) {
-			if (res->getBoolean("Tipo_CPF_CNPJ")) {
+			if (res->getString("Tipo_CPF_CNPJ") == "CPF") {
 				proprietario = new PessoaFisica();
 			}
 			else {
@@ -66,12 +66,13 @@ vector<Proprietario*> ProprietarioDAO::getProprietarios()
 	stmt = con->createStatement();
 	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario");
 	while (res->next()) {
-		if (res->getBoolean("Tipo_CPF_CNPJ")) {
+		if (res->getString("Tipo_CPF_CNPJ")=="CNPJ") {
 			proprietario = new PessoaJuridica();
 		}
 		else {
 			proprietario = new PessoaFisica();
 		}
+		proprietario->setNome(res->getString("Nome"));
 		vetorDeProprietarios.push_back(proprietario);
 	}
 	return vetorDeProprietarios;

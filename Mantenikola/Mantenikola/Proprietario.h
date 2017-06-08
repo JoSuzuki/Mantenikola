@@ -7,6 +7,7 @@ using namespace std;
 class Proprietario
 {
 protected:
+	int id;
 	string nome;
 	int CEP;
 	int numero;
@@ -15,6 +16,9 @@ public:
 	//Proprietario(string nome, int CEP, int numero,string complemento);
 	Proprietario();
 	virtual int getTipo()=0;  //metodo abstrato
+	void setNome(string nome);
+	string getNome();
+	int getId();
 	static vector<Proprietario*> getProprietarios();
 	virtual ~Proprietario();
 };

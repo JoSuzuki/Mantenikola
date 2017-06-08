@@ -9,7 +9,7 @@ private:
 	string nome;
 public:
 	Modelo(string nome);
-	static vector<Modelo*> getModelos();
+	static vector<Modelo*> materializarModelos();
 	virtual ~Modelo();
 };
 

@@ -137,6 +137,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ControladorCadastroDeMotor.cpp" />
+    <ClCompile Include="Falha.cpp" />
+    <ClCompile Include="FalhaDAO.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="Modelo.cpp" />
     <ClCompile Include="ModeloDAO.cpp" />
@@ -153,6 +155,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControladorCadastroDeMotor.h" />
+    <ClInclude Include="Falha.h" />
+    <ClInclude Include="FalhaDAO.h" />
     <ClInclude Include="MenuPrincipal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
