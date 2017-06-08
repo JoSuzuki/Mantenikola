@@ -16,10 +16,10 @@ Motor* MotorDAO::getMotor(int numeroDeSerie, string modelo)
 	try {
 		/* INSERT TUTORIAL CODE HERE! */
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
-		std::unique_ptr<sql::Connection> con(c);
+		//std::unique_ptr<sql::Connection> con(c);
 		sql::Statement *stmt;
 		sql::ResultSet *res;
-		stmt = con->createStatement();
+		stmt = c->createStatement();
 		string parametro1 = std::to_string(numeroDeSerie);
 		res = stmt->executeQuery("SELECT numeroDeSerie from motor where Numero_de_serie = " + to_string(numeroDeSerie) + "&& Nome_modelo = " + modelo);
 
@@ -98,13 +98,13 @@ bool MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo, int id_proprieta
 {
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
-		std::unique_ptr<sql::Connection> con(c);
+		//std::unique_ptr<sql::Connection> con(c);
 		sql::Statement *stmt;
 		sql::ResultSet *res;
-		stmt = con->createStatement();
+		stmt = c->createStatement();
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 		
-		stmt->execute("INSERT INTO motor() VALUES ("+ to_string(numeroDeSerie) + ", " + modelo + ")");
+		stmt->execute("INSERT INTO motor(Numero_de_serie, Nome_modelo, Id_proprietario) VALUES ("+ to_string(numeroDeSerie) + ", '" + modelo + "',"+to_string(id_proprietario)+")");
 	}
 	catch (sql::SQLException &e) {
 		return false;
