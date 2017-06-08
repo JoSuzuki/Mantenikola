@@ -15,10 +15,10 @@ void FalhaDAO::cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string mo
 {
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
-		std::unique_ptr<sql::Connection> con(c);
+		//std::unique_ptr<sql::Connection> con(c);
 		sql::Statement *stmt;
 		sql::ResultSet *res;
-		stmt = con->createStatement();
+		stmt = c->createStatement();
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 
 		stmt->execute("INSERT INTO falha VALUES ("+ dataDeEntrada +")");
