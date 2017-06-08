@@ -21,6 +21,7 @@ namespace Mantenikola {
 
 	//string listaModelos;
 	//string listaProprietarios;
+	
 
 	public ref class TelaCadastro : public System::Windows::Forms::Form
 	{
@@ -28,12 +29,11 @@ namespace Mantenikola {
 		TelaCadastro(void)
 		{
 			InitializeComponent();
-			ControladorCadastroDeMotor* c = new ControladorCadastroDeMotor();
-			c->materializarModelos();
-			c->getModelos();
-			c->materializarProprietarios();
-			c->getProprietarios();
+			//ControladorCadastroDeMotor* c = new ControladorCadastroDeMotor();
+			//c->materializarModelos();
+			//c->materializarProprietarios();
 			
+		
 		}
 
 
@@ -266,8 +266,9 @@ namespace Mantenikola {
 			//ControladorCadastroDeMotor::cadastrarMotor(nSerie, data, modelo, idProprietario);
 		//}
 		//else {
-		PopupMotorJaCadastrado ^popup = gcnew PopupMotorJaCadastrado();
-		popup->ShowDialog();
+		//PopupMotorJaCadastrado ^popup = gcnew PopupMotorJaCadastrado();
+		//popup->ShowDialog();
+		
 		this->Close();
 		//}
 
