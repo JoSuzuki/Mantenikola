@@ -21,7 +21,7 @@ void FalhaDAO::cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string mo
 		stmt = c->createStatement();
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 
-		stmt->execute("INSERT INTO falha VALUES ("+ dataDeEntrada +")");
+		stmt->execute("INSERT INTO falha(Data_de_entrada, nome_modelo, numero_de_serie_motor) VALUES ('"+ dataDeEntrada +"','"+modelo+"',"+to_string(numeroDeSerie)+")");
 	}
 	catch (sql::SQLException &e) {
 
