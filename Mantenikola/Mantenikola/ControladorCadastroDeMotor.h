@@ -4,17 +4,24 @@
 #include <sstream>
 #include "Proprietario.h"
 #include "Modelo.h"
-#include "Motor.h"
+
 
 using namespace std;
 class ControladorCadastroDeMotor
 {
+private:
+	vector<Modelo*> vetorDeModelos;
+	vector<Proprietario*> vetorDeProprietarios;
+
+
 public:
 	ControladorCadastroDeMotor();
-	static vector<Modelo*> getModelos();
-	static bool existeMotor(int numeroDeSerie, string modelo);
-	static void cadastarMotor(int numeroDeSerie, string modelo, string data, int id_proprietario);
-	static vector<Proprietario*> getProprietarios();
+	void materializarModelos();
+	vector<Modelo*> getModelos();
+	bool cadastarMotor(int numeroDeSerie, string modelo, string data, string proprietario); //cadastro falha caso cadastro de motor tenha sido bem sucedido
+	void materializarProprietarios();
+	void cadastrarFalha(int numeroDeSerie, string modelo, string data);
+	vector<Proprietario*> getProprietarios();
 	virtual ~ControladorCadastroDeMotor();
 };
 

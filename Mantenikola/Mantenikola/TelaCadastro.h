@@ -28,8 +28,11 @@ namespace Mantenikola {
 		TelaCadastro(void)
 		{
 			InitializeComponent();
-			ControladorCadastroDeMotor::getModelos();
-			ControladorCadastroDeMotor::getProprietarios();
+			ControladorCadastroDeMotor* c = new ControladorCadastroDeMotor();
+			c->materializarModelos();
+			c->getModelos();
+			c->materializarProprietarios();
+			c->getProprietarios();
 			
 		}
 

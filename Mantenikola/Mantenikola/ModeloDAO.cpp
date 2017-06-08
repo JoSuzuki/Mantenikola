@@ -55,7 +55,7 @@ Modelo* ModeloDAO::getModelo(string nome)
 	return modelo;
 }
 
-vector<Modelo*> ModeloDAO::getModelos()
+vector<Modelo*> ModeloDAO::materializarModelos()
 {
 	vector<Modelo*> vetorDeModelos;
 	sql::Connection * c = MyDAO::getInstance()->getConnection();

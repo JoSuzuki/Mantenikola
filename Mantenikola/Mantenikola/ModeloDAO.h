@@ -10,7 +10,7 @@ class ModeloDAO
 public:
 	ModeloDAO();
 	Modelo* getModelo(string nome);
-	static vector<Modelo*> getModelos();
+	static vector<Modelo*> materializarModelos();
 	//int inserir(Motor * motor);
 	virtual ~ModeloDAO();
 };

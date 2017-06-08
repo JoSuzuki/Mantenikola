@@ -60,6 +60,7 @@ vector<Motor*> MotorDAO::getMotores()
 	return vector<Motor*>();
 }
 
+/*
 bool MotorDAO::existeMotor(int numeroDeSerie, string modelo)
 {
 	bool existe = false;
@@ -81,16 +82,9 @@ bool MotorDAO::existeMotor(int numeroDeSerie, string modelo)
 		// an error, Connector/C++ generates an exception.
 	}
 	catch (sql::SQLException &e) {
-		/*
-		MySQL Connector/C++ throws three different exceptions:
-
-		- sql::MethodNotImplementedException (derived from sql::SQLException)
-		- sql::InvalidArgumentException (derived from sql::SQLException)
-		- sql::SQLException (derived from std::runtime_error)
-		*/
+		
 		cout << "# ERR: SQLException in " << __FILE__;
 		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
-		/* what() (derived from std::runtime_error) fetches error message */
 		cout << "# ERR: " << e.what();
 		cout << " (MySQL error code: " << e.getErrorCode();
 		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
@@ -98,9 +92,9 @@ bool MotorDAO::existeMotor(int numeroDeSerie, string modelo)
 		return existe;
 	}
 	return existe;
-}
+}*/
 
-void MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo)
+bool MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo, int id_proprietario)
 {
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
@@ -110,12 +104,12 @@ void MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo)
 		stmt = con->createStatement();
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 		
-		stmt->execute("INSERT INTO motor VALUES ("+ to_string(numeroDeSerie) + ", " + modelo + ")");
+		stmt->execute("INSERT INTO motor() VALUES ("+ to_string(numeroDeSerie) + ", " + modelo + ")");
 	}
 	catch (sql::SQLException &e) {
-
+		return false;
 	}
-	return;
+	return true;
 }
 
 

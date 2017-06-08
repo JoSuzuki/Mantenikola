@@ -72,6 +72,7 @@ vector<Proprietario*> ProprietarioDAO::getProprietarios()
 		else {
 			proprietario = new PessoaFisica();
 		}
+		proprietario->setNome(res->getString("Nome"));
 		vetorDeProprietarios.push_back(proprietario);
 	}
 	return vetorDeProprietarios;

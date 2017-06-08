@@ -8,9 +8,9 @@ Modelo::Modelo(string nome)
 	this->nome = nome;
 }
 
-vector<Modelo*> Modelo::getModelos()
+vector<Modelo*> Modelo::materializarModelos()
 {
-	return ModeloDAO::getModelos();
+	return ModeloDAO::materializarModelos();
 }
 
 

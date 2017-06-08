@@ -16,14 +16,11 @@ string Motor::getDataDeDesativacao()
 	return this->dataDeDesativacao;
 }
 
-bool Motor::existeMotor(int numeroDeSerie, string modelo)
-{
-	return MotorDAO::existeMotor(numeroDeSerie,modelo);
-}
 
-void Motor::cadastrarMotor(int numeroDeSerie, string modelo)
+
+bool Motor::cadastrarMotor(int numeroDeSerie, string modelo, int id_proprietario)
 {
-	MotorDAO::cadastrarMotor(numeroDeSerie, modelo);
+	return MotorDAO::cadastrarMotor(numeroDeSerie, modelo, id_proprietario);
 }
 
 
