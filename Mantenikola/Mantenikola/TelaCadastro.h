@@ -19,18 +19,12 @@ namespace Mantenikola {
 	/// Summary for TelaCadastro
 	/// </summary>
 
-	//string listaModelos;
-	//string listaProprietarios;
-	
-
 	public ref class TelaCadastro : public System::Windows::Forms::Form
 	{
 	public:
 		TelaCadastro(void)
 		{
 			InitializeComponent();
-			//ControladorCadastroDeMotor::getModelos();
-			//ControladorCadastroDeMotor::getProprietarios();
 			
 		}
 
@@ -63,6 +57,15 @@ namespace Mantenikola {
 
 
 	private: System::Windows::Forms::Label^  labelMantenikola;
+	private: System::Windows::Forms::Label^  labelErroNSerie;
+	private: System::Windows::Forms::Label^  labelErroDataEntrada;
+	private: System::Windows::Forms::Label^  labelErroModelo;
+	private: System::Windows::Forms::Label^  labelErroProprietario;
+	private: System::Windows::Forms::Label^  labelMotorCadastrado;
+
+
+
+
 
 	private:
 		/// <summary>
@@ -90,6 +93,11 @@ namespace Mantenikola {
 			this->textoNumeroDeSerie = (gcnew System::Windows::Forms::TextBox());
 			this->textoDataDeEntrada = (gcnew System::Windows::Forms::TextBox());
 			this->labelMantenikola = (gcnew System::Windows::Forms::Label());
+			this->labelErroNSerie = (gcnew System::Windows::Forms::Label());
+			this->labelErroDataEntrada = (gcnew System::Windows::Forms::Label());
+			this->labelErroModelo = (gcnew System::Windows::Forms::Label());
+			this->labelErroProprietario = (gcnew System::Windows::Forms::Label());
+			this->labelMotorCadastrado = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// botãoRetornar
@@ -108,7 +116,6 @@ namespace Mantenikola {
 			this->cbModelo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->cbModelo->FormattingEnabled = true;
-			this->cbModelo->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Modelo1", L"Modelo2", L"Modelo3" });
 			this->cbModelo->Location = System::Drawing::Point(214, 176);
 			this->cbModelo->Name = L"cbModelo";
 			this->cbModelo->Size = System::Drawing::Size(121, 21);
@@ -185,7 +192,6 @@ namespace Mantenikola {
 			this->cbProprietario->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->cbProprietario->FormattingEnabled = true;
-			this->cbProprietario->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Jão", L"Toninho", L"Baltazar" });
 			this->cbProprietario->Location = System::Drawing::Point(214, 224);
 			this->cbProprietario->Name = L"cbProprietario";
 			this->cbProprietario->Size = System::Drawing::Size(121, 21);
@@ -224,11 +230,60 @@ namespace Mantenikola {
 			this->labelMantenikola->TabIndex = 12;
 			this->labelMantenikola->Text = L"Mantenikola";
 			// 
+			// labelErroNSerie
+			// 
+			this->labelErroNSerie->AutoSize = true;
+			this->labelErroNSerie->ForeColor = System::Drawing::Color::Red;
+			this->labelErroNSerie->Location = System::Drawing::Point(345, 92);
+			this->labelErroNSerie->Name = L"labelErroNSerie";
+			this->labelErroNSerie->Size = System::Drawing::Size(0, 13);
+			this->labelErroNSerie->TabIndex = 13;
+			// 
+			// labelErroDataEntrada
+			// 
+			this->labelErroDataEntrada->AutoSize = true;
+			this->labelErroDataEntrada->ForeColor = System::Drawing::Color::Red;
+			this->labelErroDataEntrada->Location = System::Drawing::Point(345, 145);
+			this->labelErroDataEntrada->Name = L"labelErroDataEntrada";
+			this->labelErroDataEntrada->Size = System::Drawing::Size(0, 13);
+			this->labelErroDataEntrada->TabIndex = 14;
+			// 
+			// labelErroModelo
+			// 
+			this->labelErroModelo->AutoSize = true;
+			this->labelErroModelo->ForeColor = System::Drawing::Color::Red;
+			this->labelErroModelo->Location = System::Drawing::Point(345, 184);
+			this->labelErroModelo->Name = L"labelErroModelo";
+			this->labelErroModelo->Size = System::Drawing::Size(0, 13);
+			this->labelErroModelo->TabIndex = 15;
+			// 
+			// labelErroProprietario
+			// 
+			this->labelErroProprietario->AutoSize = true;
+			this->labelErroProprietario->ForeColor = System::Drawing::Color::Red;
+			this->labelErroProprietario->Location = System::Drawing::Point(345, 232);
+			this->labelErroProprietario->Name = L"labelErroProprietario";
+			this->labelErroProprietario->Size = System::Drawing::Size(0, 13);
+			this->labelErroProprietario->TabIndex = 16;
+			// 
+			// labelMotorCadastrado
+			// 
+			this->labelMotorCadastrado->AutoSize = true;
+			this->labelMotorCadastrado->Location = System::Drawing::Point(244, 266);
+			this->labelMotorCadastrado->Name = L"labelMotorCadastrado";
+			this->labelMotorCadastrado->Size = System::Drawing::Size(0, 13);
+			this->labelMotorCadastrado->TabIndex = 17;
+			// 
 			// TelaCadastro
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(514, 341);
+			this->Controls->Add(this->labelMotorCadastrado);
+			this->Controls->Add(this->labelErroProprietario);
+			this->Controls->Add(this->labelErroModelo);
+			this->Controls->Add(this->labelErroDataEntrada);
+			this->Controls->Add(this->labelErroNSerie);
 			this->Controls->Add(this->labelMantenikola);
 			this->Controls->Add(this->textoDataDeEntrada);
 			this->Controls->Add(this->textoNumeroDeSerie);
@@ -253,26 +308,72 @@ namespace Mantenikola {
 	private: System::Void botãoRetornar_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-
 	private: System::Void botãoCadastrar_Click(System::Object^  sender, System::EventArgs^  e) {
-		int nSerie =int::Parse(textoNumeroDeSerie->Text);
-		string data = msclr::interop::marshal_as<string>(textoDataDeEntrada->Text);
-		string modelo = msclr::interop::marshal_as<string>(cbModelo->Text);
-		int idProprietario = int::Parse(cbProprietario->Text);
-		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
-		//if (ControladorCadastroDeMotor::existeMotor(nSerie,modelo)) {
-			//ControladorCadastroDeMotor::cadastrarMotor(nSerie, data, modelo, idProprietario);
-		//}
-		//else {
-		//PopupMotorJaCadastrado ^popup = gcnew PopupMotorJaCadastrado();
-		//popup->ShowDialog();
+		int nSerie;
+		string data, modelo, proprietario;
+
+		if (String::IsNullOrEmpty(textoNumeroDeSerie->Text)) {
+			labelErroNSerie->Text = "Número de Série inválido";
+		}
+		else {
+			try {
+				nSerie = int::Parse(textoNumeroDeSerie->Text);
+			}
+			catch (...) {
+				labelErroNSerie->Text = "Número de Série inválido";
+			}
+		}
+		if (String::IsNullOrEmpty(textoDataDeEntrada->Text)) {
+			labelErroDataEntrada->Text = "Número de Data de entrada inválida";
+
+		}
+		else {
+			data = msclr::interop::marshal_as<string>(textoDataDeEntrada->Text);
+		}
+		if (String::IsNullOrEmpty(cbModelo->Text)) {
+			labelErroModelo->Text = "Modelo inválido";
+
+		}
+		else {
+			modelo = msclr::interop::marshal_as<string>(cbModelo->Text);
+		}
+		if (String::IsNullOrEmpty(cbProprietario->Text)) {
+			labelErroProprietario->Text = "Proprietário inválido";
+
+		}
+		else {
+			proprietario = msclr::interop::marshal_as<string>(cbProprietario->Text);
+		}
+
+		ControladorCadastroDeMotor *controladorCadastro = new ControladorCadastroDeMotor();
 		
-		this->Close();
-		//}
+		if (controladorCadastro->cadastarMotor(nSerie, modelo, data, proprietario)) {
+			labelMotorCadastrado->Text = "Motor Cadastrado!";
+		}
+		else {
+			PopupMotorJaCadastrado ^popup = gcnew PopupMotorJaCadastrado();
+			popup->ShowDialog();
+		
+			this->Close();
+		}
 
 		
 	}
 	private: System::Void TelaCadastro_Load(System::Object^  sender, System::EventArgs^  e) {
+		ControladorCadastroDeMotor *controladorCadastro = new ControladorCadastroDeMotor();
+
+		controladorCadastro->materializarModelos();
+		for (int i = 0; controladorCadastro->getModelos().size(); i++) {
+			cbModelo->Items->Add(msclr::interop::marshal_as<System::String^>(controladorCadastro->getModelos()[i]->getNome()));
+		}
+
+		controladorCadastro->materializarProprietarios();
+		for (int i = 0; controladorCadastro->getProprietarios().size(); i++) {
+			cbProprietario->Items->Add(msclr::interop::marshal_as<System::String^>(controladorCadastro->getProprietarios()[i]->getNome()));
+		}
+
+
+
 	}
-	};
+};
 }

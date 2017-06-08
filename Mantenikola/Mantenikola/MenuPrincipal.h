@@ -103,6 +103,7 @@ namespace Mantenikola {
 	}
 	private: System::Void MenuPrincipal_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
+
 	private: System::Void botãoRelatórios_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Hide();
 		TelaRelatorios ^relatorio = gcnew TelaRelatorios();
