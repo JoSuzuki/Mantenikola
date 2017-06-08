@@ -110,9 +110,11 @@ namespace Mantenikola {
 	private: System::Void botãoCancelar_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-	private: System::Void PopupMotorJaCadastrado_Load(System::Object^  sender, System::EventArgs^  e) {
-	}
 	private: System::Void botãoCadastrarNovaFalha_Click(System::Object^  sender, System::EventArgs^  e) {
 	}
+
+	private: System::Void PopupMotorJaCadastrado_Load(System::Object^  sender, System::EventArgs^  e) {
+	}
+	
 	};
 }
