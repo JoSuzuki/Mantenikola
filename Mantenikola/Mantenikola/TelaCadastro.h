@@ -327,9 +327,8 @@ namespace Mantenikola {
 			modelo = msclr::interop::marshal_as<string>(cbModelo->Text);
 			proprietario = msclr::interop::marshal_as<string>(cbProprietario->Text);
 
-			ControladorCadastroDeMotor *controladorCadastro = new ControladorCadastroDeMotor();
-
-			if (controladorCadastro->cadastarMotor(nSerie, modelo, data, proprietario)) {
+			
+			if (ControladorCadastroDeMotor::cadastarMotor(nSerie, modelo, data, proprietario)) {
 				labelMotorCadastrado->Text = "Motor Cadastrado!";
 			}
 			else {
@@ -343,28 +342,29 @@ namespace Mantenikola {
 		
 	}
 	private: System::Void TelaCadastro_Load(System::Object^  sender, System::EventArgs^  e) {
-		ControladorCadastroDeMotor *controladorCadastro = new ControladorCadastroDeMotor();
-		//AllocConsole();
-		//freopen("CONOUT$", "w", stdout);
-		controladorCadastro->materializarModelos();
-		for (int i = 0; i < controladorCadastro->getModelos().size(); i++) {
+		AllocConsole();
+		freopen("CONOUT$", "w", stdout);
+		
+		ControladorCadastroDeMotor::materializarModelos();
+		for (int i = 0; i < ControladorCadastroDeMotor::getModelos().size(); i++) {
 			try {
-				cbModelo->Items->Add(msclr::interop::marshal_as<System::String^>(controladorCadastro->getModelos()[i]->getNome()));
+				cbModelo->Items->Add(msclr::interop::marshal_as<System::String^>(ControladorCadastroDeMotor::getModelos()[i]->getNome()));
 			}
 			catch (...) {
 				break;
 			}
 		}
-		controladorCadastro->materializarProprietarios();
-		for (int i = 0; i < controladorCadastro->getProprietarios().size(); i++) {
+		ControladorCadastroDeMotor::materializarProprietarios();
+		for (int i = 0; i < ControladorCadastroDeMotor::getProprietarios().size(); i++) {
 			try {
-				cbProprietario->Items->Add(msclr::interop::marshal_as<System::String^>(controladorCadastro->getProprietarios()[i]->getNome()));
+				cbProprietario->Items->Add(msclr::interop::marshal_as<System::String^>(ControladorCadastroDeMotor::getProprietarios()[i]->getNome()));
 
 			}
 			catch (...) {
 				break;
 			}
 		}
+		
 
 	}
 	private: bool checkCampos() {

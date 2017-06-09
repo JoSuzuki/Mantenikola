@@ -2,6 +2,8 @@
 #include "Motor.h"
 #include "Falha.h"
 
+vector<Modelo*> ControladorCadastroDeMotor::vetorDeModelos = vector<Modelo*>();
+vector<Proprietario*> ControladorCadastroDeMotor::vetorDeProprietarios = vector<Proprietario*>();
 
 
 ControladorCadastroDeMotor::ControladorCadastroDeMotor()
@@ -10,24 +12,29 @@ ControladorCadastroDeMotor::ControladorCadastroDeMotor()
 
 void ControladorCadastroDeMotor::materializarModelos()
 {
-	this->vetorDeModelos = Modelo::materializarModelos();
+	vetorDeModelos = Modelo::materializarModelos();
 }
+
 
 vector<Modelo*> ControladorCadastroDeMotor::getModelos()
 {
-	return this->vetorDeModelos;
-}
+	return vetorDeModelos;
+} 
 
 
 bool ControladorCadastroDeMotor::cadastarMotor(int numeroDeSerie, string modelo, string data, string proprietario)
 {
 	int id_proprietario;
-	for (int i = 0; i < this->vetorDeProprietarios.size(); i++) {
-		if (this->vetorDeProprietarios[i]->getNome() == proprietario) {
-			id_proprietario = this->vetorDeProprietarios[i]->getId();
+	cout << proprietario << endl;
+	for (int i = 0; i < vetorDeProprietarios.size(); i++) {
+		cout << vetorDeProprietarios[i]->getNome() << endl;
+		cout << vetorDeProprietarios[i]->getId() << endl;
+		if (vetorDeProprietarios[i]->getNome() == proprietario) {
+			id_proprietario = vetorDeProprietarios[i]->getId();
 			break; // achou o proprietario pode sair do loop
 		}
 	}
+	
 	bool cadastrou = Motor::cadastrarMotor(numeroDeSerie, modelo, id_proprietario);
 	if (cadastrou == true) {
 		Falha::cadastrarFalha(data, numeroDeSerie, modelo);
@@ -38,7 +45,7 @@ bool ControladorCadastroDeMotor::cadastarMotor(int numeroDeSerie, string modelo,
 
 void ControladorCadastroDeMotor::materializarProprietarios()
 {
-	this->vetorDeProprietarios = Proprietario::getProprietarios();
+	vetorDeProprietarios = Proprietario::getProprietarios();
 }
 
 void ControladorCadastroDeMotor::cadastrarFalha(int numeroDeSerie, string modelo, string data)
@@ -46,9 +53,10 @@ void ControladorCadastroDeMotor::cadastrarFalha(int numeroDeSerie, string modelo
 	Falha::cadastrarFalha(data, numeroDeSerie, modelo);
 }
 
+
 vector<Proprietario*> ControladorCadastroDeMotor::getProprietarios()
 {
-	return this->vetorDeProprietarios;
+	return vetorDeProprietarios;
 }
 
 
