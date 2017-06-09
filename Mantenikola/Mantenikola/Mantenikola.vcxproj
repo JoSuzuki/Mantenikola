@@ -101,12 +101,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\pcs3443\boost_1_64_0;D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Pedro\Documents\Visual Studio 2017\mysql-connector-c++-noinstall-1.1.9-winx64\include;C:\Users\Pedro\Documents\Visual Studio 2017\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Pedro\Documents\Visual Studio 2017\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
@@ -124,13 +124,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\include;D:\pcs3443\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\visualstudiobiblioteca\mysql-connector-c++-noinstall-1.1.9-winx64\include;C:\visualstudiobiblioteca\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>false</ShowIncludes>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\visualstudiobiblioteca\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
