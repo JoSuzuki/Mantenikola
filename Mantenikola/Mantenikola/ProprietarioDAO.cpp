@@ -31,7 +31,7 @@ Proprietario* ProprietarioDAO::getProprietario(int id)
 				proprietario = new PessoaFisica();
 			}
 		}
-		//delete res;
+		// delete res;
 		//delete stmt;
 	}
 	catch (sql::SQLException &e) {

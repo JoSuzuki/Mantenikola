@@ -344,9 +344,10 @@ namespace Mantenikola {
 	}
 	private: System::Void TelaCadastro_Load(System::Object^  sender, System::EventArgs^  e) {
 		ControladorCadastroDeMotor *controladorCadastro = new ControladorCadastroDeMotor();
-
+		//AllocConsole();
+		//freopen("CONOUT$", "w", stdout);
 		controladorCadastro->materializarModelos();
-		for (int i = 0; controladorCadastro->getModelos().size(); i++) {
+		for (int i = 0; i < controladorCadastro->getModelos().size(); i++) {
 			try {
 				cbModelo->Items->Add(msclr::interop::marshal_as<System::String^>(controladorCadastro->getModelos()[i]->getNome()));
 			}
@@ -354,9 +355,8 @@ namespace Mantenikola {
 				break;
 			}
 		}
-
 		controladorCadastro->materializarProprietarios();
-		for (int i = 0; controladorCadastro->getProprietarios().size(); i++) {
+		for (int i = 0; i < controladorCadastro->getProprietarios().size(); i++) {
 			try {
 				cbProprietario->Items->Add(msclr::interop::marshal_as<System::String^>(controladorCadastro->getProprietarios()[i]->getNome()));
 

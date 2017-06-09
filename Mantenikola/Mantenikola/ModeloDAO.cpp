@@ -14,7 +14,9 @@ ModeloDAO::ModeloDAO()
 vector<Modelo*> ModeloDAO::materializarModelos()
 {
 	vector<Modelo*> vetorDeModelos;
+	
 	sql::Connection * c = MyDAO::getInstance()->getConnection();
+	
 	//std::unique_ptr<sql::Connection> con(c);
 	sql::Statement *stmt;
 	sql::ResultSet *res;
@@ -24,6 +26,8 @@ vector<Modelo*> ModeloDAO::materializarModelos()
 		Modelo* modelo = new Modelo(res->getString("nome"));
 		vetorDeModelos.push_back(modelo);
 	}
+	//delete res;
+	//delete stmt;
 	return vetorDeModelos;
 }
 
