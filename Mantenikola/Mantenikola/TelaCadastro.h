@@ -101,7 +101,7 @@ namespace Mantenikola {
 			// botãoRetornar
 			// 
 			this->botãoRetornar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->botãoRetornar->Location = System::Drawing::Point(348, 266);
+			this->botãoRetornar->Location = System::Drawing::Point(392, 295);
 			this->botãoRetornar->Name = L"botãoRetornar";
 			this->botãoRetornar->Size = System::Drawing::Size(100, 36);
 			this->botãoRetornar->TabIndex = 0;
@@ -116,13 +116,13 @@ namespace Mantenikola {
 			this->cbModelo->FormattingEnabled = true;
 			this->cbModelo->Location = System::Drawing::Point(214, 176);
 			this->cbModelo->Name = L"cbModelo";
-			this->cbModelo->Size = System::Drawing::Size(121, 21);
+			this->cbModelo->Size = System::Drawing::Size(165, 21);
 			this->cbModelo->TabIndex = 1;
 			// 
 			// botãoCadastrar
 			// 
 			this->botãoCadastrar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->botãoCadastrar->Location = System::Drawing::Point(67, 266);
+			this->botãoCadastrar->Location = System::Drawing::Point(111, 295);
 			this->botãoCadastrar->Name = L"botãoCadastrar";
 			this->botãoCadastrar->Size = System::Drawing::Size(100, 36);
 			this->botãoCadastrar->TabIndex = 2;
@@ -132,10 +132,13 @@ namespace Mantenikola {
 			// 
 			// label1
 			// 
+			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(214, 32);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(210, 22);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(105, 13);
+			this->label1->Size = System::Drawing::Size(158, 20);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Cadastro de Motores";
 			// 
@@ -170,7 +173,7 @@ namespace Mantenikola {
 			// 
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(214, 88);
+			this->label5->Location = System::Drawing::Point(236, 88);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(121, 13);
 			this->label5->TabIndex = 7;
@@ -192,7 +195,7 @@ namespace Mantenikola {
 			this->cbProprietario->FormattingEnabled = true;
 			this->cbProprietario->Location = System::Drawing::Point(214, 224);
 			this->cbProprietario->Name = L"cbProprietario";
-			this->cbProprietario->Size = System::Drawing::Size(121, 21);
+			this->cbProprietario->Size = System::Drawing::Size(165, 21);
 			this->cbProprietario->TabIndex = 9;
 			// 
 			// textoNumeroDeSerie
@@ -201,7 +204,7 @@ namespace Mantenikola {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textoNumeroDeSerie->Location = System::Drawing::Point(214, 65);
 			this->textoNumeroDeSerie->Name = L"textoNumeroDeSerie";
-			this->textoNumeroDeSerie->Size = System::Drawing::Size(121, 20);
+			this->textoNumeroDeSerie->Size = System::Drawing::Size(165, 20);
 			this->textoNumeroDeSerie->TabIndex = 10;
 			// 
 			// textoDataDeEntrada
@@ -210,7 +213,7 @@ namespace Mantenikola {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textoDataDeEntrada->Location = System::Drawing::Point(214, 122);
 			this->textoDataDeEntrada->Name = L"textoDataDeEntrada";
-			this->textoDataDeEntrada->Size = System::Drawing::Size(121, 20);
+			this->textoDataDeEntrada->Size = System::Drawing::Size(165, 20);
 			this->textoDataDeEntrada->TabIndex = 11;
 			// 
 			// labelMantenikola
@@ -274,8 +277,9 @@ namespace Mantenikola {
 			// 
 			// label7
 			// 
+			this->label7->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(214, 145);
+			this->label7->Location = System::Drawing::Point(236, 145);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(107, 13);
 			this->label7->TabIndex = 18;
@@ -285,7 +289,7 @@ namespace Mantenikola {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(514, 341);
+			this->ClientSize = System::Drawing::Size(558, 370);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->labelMotorCadastrado);
 			this->Controls->Add(this->labelErroProprietario);
@@ -318,11 +322,11 @@ namespace Mantenikola {
 	}
 
 	private: System::Void botãoCadastrar_Click(System::Object^  sender, System::EventArgs^  e) {
-		int nSerie;
+		_int64 nSerie;
 		string data, modelo, proprietario;
 		if (checkCampos()) {
 
-			nSerie = int::Parse(textoNumeroDeSerie->Text);
+			nSerie = _int64::Parse(textoNumeroDeSerie->Text);
 			data = msclr::interop::marshal_as<string>(textoDataDeEntrada->Text);
 			modelo = msclr::interop::marshal_as<string>(cbModelo->Text);
 			proprietario = msclr::interop::marshal_as<string>(cbProprietario->Text);
@@ -338,8 +342,6 @@ namespace Mantenikola {
 				this->Close();
 			}
 		}
-
-		
 	}
 	private: System::Void TelaCadastro_Load(System::Object^  sender, System::EventArgs^  e) {
 		AllocConsole();
@@ -364,46 +366,60 @@ namespace Mantenikola {
 				break;
 			}
 		}
-		
-
 	}
 	private: bool checkCampos() {
-		int nSerie;
+		_int64 nSerie;
 		string data;
+
+		labelErroNSerie->Text = "";
+		labelErroDataEntrada->Text = "";
+		labelErroModelo->Text = "";
+		labelErroProprietario->Text = "";
+
 		if (String::IsNullOrEmpty(textoNumeroDeSerie->Text) || String::IsNullOrWhiteSpace(textoNumeroDeSerie->Text)) {
-			labelErroNSerie->Text = "Número de Série inválido";
+			labelErroNSerie->Text = "Número de Série inválido (nenhum valor)";
 			return FALSE;
 		}
-		else {
+		
+		else { 
 			try {
-				nSerie = int::Parse(textoNumeroDeSerie->Text);
-				if ((nSerie / 100000) % 100 > 52 || nSerie / 10000000 > 2017) {
-					labelErroNSerie->Text = "Número de Série inválido";
+				nSerie = _int64::Parse(textoNumeroDeSerie->Text);
+				if ((nSerie / 100000) % 100 > 52 || nSerie > 100000000000 || nSerie < 0) {
+					labelErroNSerie->Text = "Número de Série inválido (fora da faixa)";
 					return FALSE;
 				}
 			}
 			catch (...) {
-				labelErroNSerie->Text = "Número de Série inválido";
+				labelErroNSerie->Text = "Número de Série inválido (não converteu)";
 				return FALSE;
 			}
 		}
 		if (String::IsNullOrEmpty(textoDataDeEntrada->Text) || String::IsNullOrWhiteSpace(textoDataDeEntrada->Text)) {
-			labelErroDataEntrada->Text = "Número de Data de entrada inválida";
+			labelErroDataEntrada->Text = "Data de inválida";
 			return FALSE;
 		}
 		else {
 			data = msclr::interop::marshal_as<string>(textoDataDeEntrada->Text);
 			if (data.size() != 8 || data[2] !='/' || data[5] != '/') {
-				labelErroDataEntrada->Text = "Número de Data de entrada inválida";
+				labelErroDataEntrada->Text = "Data de inválida";
 				return FALSE;
 			}
 			try {
-				std::stoi(data.substr(0, 1));
-				std::stoi(data.substr(3, 4));
-				std::stoi(data.substr(6, 7));
+				if (std::stoi(data.substr(0, 1)) < 0 || std::stoi(data.substr(0, 1)) > 31) {
+					labelErroDataEntrada->Text = "Data de inválida";
+					return FALSE;
+				}
+				if (std::stoi(data.substr(3, 4)) < 0 || std::stoi(data.substr(3, 4)) > 12) {
+					labelErroDataEntrada->Text = "Data de inválida";
+					return FALSE;
+				}
+				if (std::stoi(data.substr(6, 7)) < 0) {
+					labelErroDataEntrada->Text = "Data de inválida";
+					return FALSE;
+				}
 			}
 			catch (...) {
-				labelErroDataEntrada->Text = "Número de Data de entrada inválida";
+				labelErroDataEntrada->Text = "Data de inválida";
 				return FALSE;
 			}
 		}
