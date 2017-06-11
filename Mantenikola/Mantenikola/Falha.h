@@ -9,6 +9,6 @@ private:
 public:
 	Falha();
 	void setDataDeEntrada(string dataDeEntrada);
-	static void cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string modelo);
+	static void cadastrarFalha(string dataDeEntrada, _int64 numeroDeSerie, string modelo);
 	virtual ~Falha();
 };

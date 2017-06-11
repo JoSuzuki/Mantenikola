@@ -147,10 +147,10 @@
     <ClCompile Include="MyDAO.cpp" />
     <ClCompile Include="PessoaFisica.cpp" />
     <ClCompile Include="PessoaJuridica.cpp" />
-    <ClCompile Include="PopupMotorJaCadastrado.cpp" />
     <ClCompile Include="Proprietario.cpp" />
     <ClCompile Include="ProprietarioDAO.cpp" />
     <ClCompile Include="TelaCadastro.cpp" />
+    <ClCompile Include="telaRegistroDeFalha1.cpp" />
     <ClCompile Include="TelaRelatorios.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,12 +167,12 @@
     <ClInclude Include="MyDAO.h" />
     <ClInclude Include="PessoaFisica.h" />
     <ClInclude Include="PessoaJuridica.h" />
-    <ClInclude Include="PopupMotorJaCadastrado.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Proprietario.h" />
     <ClInclude Include="ProprietarioDAO.h" />
     <ClInclude Include="TelaCadastro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="telaRegistroDeFalha1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TelaRelatorios.h">
@@ -193,11 +193,11 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
-      <DependentUpon>PopupMotorJaCadastrado.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <DependentUpon>TelaCadastro.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaRegistroDeFalha1.resx">
+      <DependentUpon>telaRegistroDeFalha1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaRelatorios.resx">
       <DependentUpon>TelaRelatorios.h</DependentUpon>

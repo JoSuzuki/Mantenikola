@@ -22,7 +22,7 @@ vector<Modelo*> ControladorCadastroDeMotor::getModelos()
 } 
 
 
-bool ControladorCadastroDeMotor::cadastarMotor(int numeroDeSerie, string modelo, string data, string proprietario)
+bool ControladorCadastroDeMotor::cadastarMotor(_int64 numeroDeSerie, string modelo, string data, string proprietario)
 {
 	int id_proprietario;
 	cout << proprietario << endl;
@@ -48,7 +48,7 @@ void ControladorCadastroDeMotor::materializarProprietarios()
 	vetorDeProprietarios = Proprietario::getProprietarios();
 }
 
-void ControladorCadastroDeMotor::cadastrarFalha(int numeroDeSerie, string modelo, string data)
+void ControladorCadastroDeMotor::cadastrarFalha(_int64 numeroDeSerie, string modelo, string data)
 {
 	Falha::cadastrarFalha(data, numeroDeSerie, modelo);
 }

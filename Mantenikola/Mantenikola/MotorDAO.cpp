@@ -10,7 +10,7 @@ MotorDAO::MotorDAO()
 {
 }
 
-Motor* MotorDAO::getMotor(int numeroDeSerie, string modelo)
+Motor* MotorDAO::getMotor(_int64 numeroDeSerie, string modelo)
 {
 	Motor* motor = nullptr;
 	try {
@@ -94,7 +94,7 @@ bool MotorDAO::existeMotor(int numeroDeSerie, string modelo)
 	return existe;
 }*/
 
-bool MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo, int id_proprietario)
+bool MotorDAO::cadastrarMotor(_int64 numeroDeSerie, string modelo, int id_proprietario)
 {
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();

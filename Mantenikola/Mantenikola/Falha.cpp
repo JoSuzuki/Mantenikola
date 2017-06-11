@@ -10,7 +10,7 @@ void Falha::setDataDeEntrada(string dataDeEntrada)
 	this->dataDeEntrada = dataDeEntrada;
 }
 
-void Falha::cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string modelo)
+void Falha::cadastrarFalha(string dataDeEntrada, _int64 numeroDeSerie, string modelo)
 {
 	FalhaDAO::cadastrarFalha(dataDeEntrada, numeroDeSerie, modelo);
 }

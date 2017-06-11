@@ -18,9 +18,9 @@ public:
 	ControladorCadastroDeMotor();
 	static void materializarModelos();
 	static vector<Modelo*> getModelos();
-	static bool cadastarMotor(int numeroDeSerie, string modelo, string data, string proprietario); //cadastro falha caso cadastro de motor tenha sido bem sucedido
+	static bool cadastarMotor(_int64 numeroDeSerie, string modelo, string data, string proprietario); //cadastro falha caso cadastro de motor tenha sido bem sucedido
 	static void materializarProprietarios();
-	static void cadastrarFalha(int numeroDeSerie, string modelo, string data);
+	static void cadastrarFalha(_int64 numeroDeSerie, string modelo, string data);
 	static vector<Proprietario*> getProprietarios();
 	virtual ~ControladorCadastroDeMotor();
 };
