@@ -1,4 +1,5 @@
 #include "Motor.h"
+#include "MotorDAO.h"
 
 Motor::Motor()
 {
@@ -13,6 +14,13 @@ int Motor::getNumeroDeSerie()
 string Motor::getDataDeDesativacao()
 {
 	return this->dataDeDesativacao;
+}
+
+
+
+bool Motor::cadastrarMotor(_int64 numeroDeSerie, string modelo, int id_proprietario)
+{
+	return MotorDAO::cadastrarMotor(numeroDeSerie, modelo, id_proprietario);
 }
 
 

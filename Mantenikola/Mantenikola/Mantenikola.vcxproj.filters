@@ -54,6 +54,15 @@
     <ClCompile Include="TelaRelatorios.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Falha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FalhaDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="telaRegistroDeFalha1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyDAO.h">
@@ -95,6 +104,15 @@
     <ClInclude Include="TelaRelatorios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Falha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FalhaDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="telaRegistroDeFalha1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtostestes.txt" />
@@ -103,10 +121,16 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaRelatorios.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaRegistroDeFalha1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

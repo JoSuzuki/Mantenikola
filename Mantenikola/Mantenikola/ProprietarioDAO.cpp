@@ -17,10 +17,10 @@ Proprietario* ProprietarioDAO::getProprietario(int id)
 	Proprietario* proprietario = nullptr;
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
-		std::unique_ptr<sql::Connection> con(c);
+		//std::unique_ptr<sql::Connection> con(c);
 		sql::Statement *stmt;
 		sql::ResultSet *res;
-		stmt = con->createStatement();
+		stmt = c->createStatement();
 		string parametro1 = std::to_string(id);
 		res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario where Id = " + parametro1);
 		while (res->next()) {
@@ -31,8 +31,8 @@ Proprietario* ProprietarioDAO::getProprietario(int id)
 				proprietario = new PessoaFisica();
 			}
 		}
-		delete res;
-		delete stmt;
+		// delete res;
+		//delete stmt;
 	}
 	catch (sql::SQLException &e) {
 		/*
@@ -60,18 +60,20 @@ vector<Proprietario*> ProprietarioDAO::getProprietarios()
 	vector<Proprietario*> vetorDeProprietarios;
 	Proprietario* proprietario = nullptr;
 	sql::Connection * c = MyDAO::getInstance()->getConnection();
-	std::unique_ptr<sql::Connection> con(c);
+	//std::unique_ptr<sql::Connection> con(c);
 	sql::Statement *stmt;
 	sql::ResultSet *res;
-	stmt = con->createStatement();
-	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario");
+	stmt = c->createStatement();
+	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ, Id from Proprietario");
 	while (res->next()) {
 		if (res->getBoolean("Tipo_CPF_CNPJ")) {
-			proprietario = new PessoaJuridica();
-		}
-		else {
 			proprietario = new PessoaFisica();
 		}
+		else {
+			proprietario = new PessoaJuridica();
+		}
+		proprietario->setNome(res->getString("Nome"));
+		proprietario->setId(res->getInt("Id"));
 		vetorDeProprietarios.push_back(proprietario);
 	}
 	return vetorDeProprietarios;

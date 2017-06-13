@@ -8,11 +8,15 @@ Modelo::Modelo(string nome)
 	this->nome = nome;
 }
 
-vector<Modelo*> Modelo::getModelos()
+string Modelo::getNome()
 {
-	return ModeloDAO::getModelos();
+	return this->nome;
 }
 
+vector<Modelo*> Modelo::materializarModelos()
+{
+	return ModeloDAO::materializarModelos();
+}
 
 Modelo::~Modelo()
 {
