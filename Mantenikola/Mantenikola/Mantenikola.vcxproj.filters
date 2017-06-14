@@ -121,9 +121,6 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
@@ -133,5 +130,8 @@
     <EmbeddedResource Include="telaRegistroDeFalha1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
