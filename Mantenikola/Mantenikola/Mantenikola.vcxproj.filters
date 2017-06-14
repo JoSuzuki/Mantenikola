@@ -125,18 +125,6 @@
     <ClInclude Include="telaRegistroDeFalha1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ControladorRegistroDeFalha.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="telaRegistroDeFalha2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ModoDeFalhaDAO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ModoDeFalha.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtostestes.txt" />
