@@ -125,13 +125,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Fabio\Downloads\Eng Soft\mysql-connector-c++-noinstall-1.1.9-winx64\include;C:\Users\Fabio\Downloads\Eng Soft\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\pcs3443\boost_1_64_0;D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>false</ShowIncludes>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Fabio\Downloads\Eng Soft\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>

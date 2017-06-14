@@ -89,6 +89,7 @@ namespace Mantenikola {
 			this->botãoCancelar = (gcnew System::Windows::Forms::Button());
 			this->tabelaMotores = (gcnew System::Windows::Forms::DataGridView());
 			this->telaRegistroDeFalha2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->erroProvidencia = (gcnew System::Windows::Forms::Label());
 			this->erroModoDeFalha = (gcnew System::Windows::Forms::Label());
 			this->botãoDescartarMotor = (gcnew System::Windows::Forms::Button());
@@ -105,7 +106,6 @@ namespace Mantenikola {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaMotores))->BeginInit();
 			this->telaRegistroDeFalha2->SuspendLayout();
 			this->SuspendLayout();
@@ -151,7 +151,7 @@ namespace Mantenikola {
 			this->botãoContinuar->TabIndex = 16;
 			this->botãoContinuar->Text = L"Continuar";
 			this->botãoContinuar->UseVisualStyleBackColor = true;
-			//this->botãoContinuar->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoContinuar_Click);
+			this->botãoContinuar->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoContinuar_Click);
 			// 
 			// botãoCancelar
 			// 
@@ -161,14 +161,17 @@ namespace Mantenikola {
 			this->botãoCancelar->TabIndex = 17;
 			this->botãoCancelar->Text = L"Cancelar";
 			this->botãoCancelar->UseVisualStyleBackColor = true;
-			//this->botãoCancelar->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoCancelar_Click);
+			this->botãoCancelar->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoCancelar_Click);
 			// 
 			// tabelaMotores
 			// 
+			this->tabelaMotores->AllowUserToAddRows = false;
+			this->tabelaMotores->AllowUserToDeleteRows = false;
 			this->tabelaMotores->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tabelaMotores->Location = System::Drawing::Point(110, 51);
 			this->tabelaMotores->MultiSelect = false;
 			this->tabelaMotores->Name = L"tabelaMotores";
+			this->tabelaMotores->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tabelaMotores->Size = System::Drawing::Size(445, 234);
 			this->tabelaMotores->TabIndex = 18;
 			// 
@@ -197,6 +200,21 @@ namespace Mantenikola {
 			this->telaRegistroDeFalha2->TabIndex = 19;
 			this->telaRegistroDeFalha2->TabStop = false;
 			this->telaRegistroDeFalha2->Text = L"Registro de falha";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->label9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label9->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label9->Location = System::Drawing::Point(0, 0);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(108, 22);
+			this->label9->TabIndex = 30;
+			this->label9->Text = L"Mantenikola";
 			// 
 			// erroProvidencia
 			// 
@@ -233,7 +251,7 @@ namespace Mantenikola {
 			this->button1->TabIndex = 26;
 			this->button1->Text = L"Cancelar";
 			this->button1->UseVisualStyleBackColor = true;
-			//this->button1->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::button1_Click);
 			// 
 			// botãoCadastrar
 			// 
@@ -243,7 +261,7 @@ namespace Mantenikola {
 			this->botãoCadastrar->TabIndex = 25;
 			this->botãoCadastrar->Text = L"Cadastrar";
 			this->botãoCadastrar->UseVisualStyleBackColor = true;
-			//this->botãoCadastrar->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoCadastrar_Click);
+			this->botãoCadastrar->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoCadastrar_Click);
 			// 
 			// cbModoDeFalha
 			// 
@@ -336,21 +354,6 @@ namespace Mantenikola {
 			this->label8->TabIndex = 14;
 			this->label8->Text = L"Motor";
 			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->BackColor = System::Drawing::SystemColors::AppWorkspace;
-			this->label9->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->label9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label9->ForeColor = System::Drawing::SystemColors::ControlText;
-			this->label9->Location = System::Drawing::Point(0, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(108, 22);
-			this->label9->TabIndex = 30;
-			this->label9->Text = L"Mantenikola";
-			// 
 			// telaRegistroDeFalha1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -375,33 +378,40 @@ namespace Mantenikola {
 		}
 #pragma endregion
 	private: System::Void telaRegistroDeFalha1_Load(System::Object^  sender, System::EventArgs^  e) {
-		/*
-		ControladorRegistroDeFalha::materializarTablea();
+	
 		
-		ControladorRegistroDeFalha::materializarModoDeFalha();
-		for (int i = 0; i < ControladorRegistroDeFalha::getModoDeFalha().size(); i++) {
+		ControladorRegistroDeFalha::materializarModosDeFalha();
+		for (int i = 0; i < ControladorRegistroDeFalha::getModosDeFalha().size(); i++) {
 			try {
-				cbModoDeFalha->Items->Add(msclr::interop::marshal_as<System::String^>(ControladorCadastroDeMotor::getModoDeFalha()[i]->getNome()));
+				cbModoDeFalha->Items->Add(msclr::interop::marshal_as<System::String^>(ControladorRegistroDeFalha::getModosDeFalha()[i]->getNome()));
 			}
 			catch (...) {
 				break;
 			}
-		}*/
+		}
+
+		DataTable^ tabelaFalha = ControladorRegistroDeFalha::getTabelaDeFalhas();
+		BindingSource^ bSource = gcnew BindingSource();
+
+		bSource->DataSource = tabelaFalha;
+		tabelaMotores->DataSource = bSource;
+
 
 		telaRegistroDeFalha2->Hide();
+
 		//BindingSource^ bSource = gcnew BindingSource();
 
 		//bSource->DataSource = tabelaFalha;
 		//tabelaMotores->DataSource = bSource;
 
 	}
-	/*
+	
 	private: System::Void botãoCancelar_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
 	private: System::Void botãoContinuar_Click(System::Object^  sender, System::EventArgs^  e) {
 		telaRegistroDeFalha2->Show();
-		textModelo->Text = msclr::interop::marshal_as<System::String^>(tabelaMotores->SelectedRows[0]) + " " + msclr::interop::marshal_as<System::String^>(tabelaMotores->SelectedRows[1]);
+		textModelo->Text = tabelaMotores->SelectedRows[0]->Cells[0]->Value->ToString() + " " + tabelaMotores->SelectedRows[0]->Cells[1]->Value->ToString();
 	}
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -418,6 +428,6 @@ namespace Mantenikola {
 
 		}
 
-	}*/
+	}
 };
 }

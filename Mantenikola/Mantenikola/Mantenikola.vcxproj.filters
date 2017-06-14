@@ -148,9 +148,6 @@
     <EmbeddedResource Include="telaRegistroDeFalha1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="telaRegistroDeFalha2.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
