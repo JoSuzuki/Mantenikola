@@ -9,6 +9,7 @@ private:
 public:
 	Falha();
 	static System::Data::DataTable^ tabelaDeFalhas();
+	static bool updateFalha(__int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro);
 	void setDataDeEntrada(string dataDeEntrada);
 	static void cadastrarFalha(string dataDeEntrada, _int64 numeroDeSerie, string modelo);
 	virtual ~Falha();
