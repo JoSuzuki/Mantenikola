@@ -176,7 +176,7 @@ namespace Mantenikola {
 			this->Controls->Add(this->labelMantenikola);
 			this->Name = L"telaRegistroDeFalha1";
 			this->Text = L"telaRegistroDeFalha1";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &telaRegistroDeFalha1::telaRegistroDeFalha1_FormClosing);
+			//this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &telaRegistroDeFalha1::telaRegistroDeFalha1_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &telaRegistroDeFalha1::telaRegistroDeFalha1_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaMotores))->EndInit();
 			this->ResumeLayout(false);
@@ -210,8 +210,9 @@ namespace Mantenikola {
 	private: System::Void botãoCancelar_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
+			 /*
 	private: System::Void telaRegistroDeFalha1_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
 		Application::Exit();
-	}
+	}*/
 };
 }

@@ -143,6 +143,8 @@
     <ClCompile Include="MenuPrincipal.cpp" />
     <ClCompile Include="Modelo.cpp" />
     <ClCompile Include="ModeloDAO.cpp" />
+    <ClCompile Include="ModoDeFalha.cpp" />
+    <ClCompile Include="ModoDeFalhaDAO.cpp" />
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="MotorDAO.cpp" />
     <ClCompile Include="MyDAO.cpp" />
@@ -152,6 +154,7 @@
     <ClCompile Include="ProprietarioDAO.cpp" />
     <ClCompile Include="TelaCadastro.cpp" />
     <ClCompile Include="telaRegistroDeFalha1.cpp" />
+    <ClCompile Include="telaRegistroDeFalha2.cpp" />
     <ClCompile Include="TelaRelatorios.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +166,8 @@
     </ClInclude>
     <ClInclude Include="Modelo.h" />
     <ClInclude Include="ModeloDAO.h" />
+    <ClInclude Include="ModoDeFalha.h" />
+    <ClInclude Include="ModoDeFalhaDAO.h" />
     <ClInclude Include="Motor.h" />
     <ClInclude Include="MotorDAO.h" />
     <ClInclude Include="MyDAO.h" />
@@ -174,6 +179,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="telaRegistroDeFalha1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="telaRegistroDeFalha2.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TelaRelatorios.h">
@@ -199,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaRegistroDeFalha1.resx">
       <DependentUpon>telaRegistroDeFalha1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaRegistroDeFalha2.resx">
+      <DependentUpon>telaRegistroDeFalha2.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaRelatorios.resx">
       <DependentUpon>TelaRelatorios.h</DependentUpon>

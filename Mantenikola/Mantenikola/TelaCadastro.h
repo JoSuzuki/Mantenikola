@@ -116,7 +116,7 @@ namespace Mantenikola {
 			// 
 			this->botãoRetornar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->botãoRetornar->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->botãoRetornar->Location = System::Drawing::Point(383, 295);
+			this->botãoRetornar->Location = System::Drawing::Point(468, 295);
 			this->botãoRetornar->Name = L"botãoRetornar";
 			this->botãoRetornar->Size = System::Drawing::Size(100, 36);
 			this->botãoRetornar->TabIndex = 0;
@@ -131,13 +131,13 @@ namespace Mantenikola {
 			this->cbModelo->FormattingEnabled = true;
 			this->cbModelo->Location = System::Drawing::Point(214, 176);
 			this->cbModelo->Name = L"cbModelo";
-			this->cbModelo->Size = System::Drawing::Size(156, 21);
+			this->cbModelo->Size = System::Drawing::Size(215, 21);
 			this->cbModelo->TabIndex = 1;
 			// 
 			// botãoCadastrar
 			// 
 			this->botãoCadastrar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->botãoCadastrar->Location = System::Drawing::Point(46, 295);
+			this->botãoCadastrar->Location = System::Drawing::Point(131, 295);
 			this->botãoCadastrar->Name = L"botãoCadastrar";
 			this->botãoCadastrar->Size = System::Drawing::Size(100, 36);
 			this->botãoCadastrar->TabIndex = 2;
@@ -151,7 +151,7 @@ namespace Mantenikola {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(194, 9);
+			this->label1->Location = System::Drawing::Point(237, 9);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(158, 20);
 			this->label1->TabIndex = 3;
@@ -188,7 +188,7 @@ namespace Mantenikola {
 			// 
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(231, 88);
+			this->label5->Location = System::Drawing::Point(274, 88);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(121, 13);
 			this->label5->TabIndex = 7;
@@ -210,7 +210,7 @@ namespace Mantenikola {
 			this->cbProprietario->FormattingEnabled = true;
 			this->cbProprietario->Location = System::Drawing::Point(214, 224);
 			this->cbProprietario->Name = L"cbProprietario";
-			this->cbProprietario->Size = System::Drawing::Size(156, 21);
+			this->cbProprietario->Size = System::Drawing::Size(215, 21);
 			this->cbProprietario->TabIndex = 9;
 			// 
 			// textoNumeroDeSerie
@@ -219,7 +219,7 @@ namespace Mantenikola {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textoNumeroDeSerie->Location = System::Drawing::Point(214, 65);
 			this->textoNumeroDeSerie->Name = L"textoNumeroDeSerie";
-			this->textoNumeroDeSerie->Size = System::Drawing::Size(156, 20);
+			this->textoNumeroDeSerie->Size = System::Drawing::Size(215, 20);
 			this->textoNumeroDeSerie->TabIndex = 10;
 			// 
 			// textoDataDeEntrada
@@ -228,7 +228,7 @@ namespace Mantenikola {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textoDataDeEntrada->Location = System::Drawing::Point(214, 122);
 			this->textoDataDeEntrada->Name = L"textoDataDeEntrada";
-			this->textoDataDeEntrada->Size = System::Drawing::Size(156, 20);
+			this->textoDataDeEntrada->Size = System::Drawing::Size(215, 20);
 			this->textoDataDeEntrada->TabIndex = 11;
 			// 
 			// labelMantenikola
@@ -304,7 +304,7 @@ namespace Mantenikola {
 			// 
 			this->label7->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(231, 145);
+			this->label7->Location = System::Drawing::Point(274, 145);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(107, 13);
 			this->label7->TabIndex = 18;
@@ -318,7 +318,7 @@ namespace Mantenikola {
 			this->PopupMotorJaCadastrado->Controls->Add(this->botãoCancelar);
 			this->PopupMotorJaCadastrado->Controls->Add(this->botãoCadastrarNovaFalha);
 			this->PopupMotorJaCadastrado->Controls->Add(this->label9);
-			this->PopupMotorJaCadastrado->Location = System::Drawing::Point(23, 42);
+			this->PopupMotorJaCadastrado->Location = System::Drawing::Point(77, 42);
 			this->PopupMotorJaCadastrado->Name = L"PopupMotorJaCadastrado";
 			this->PopupMotorJaCadastrado->Size = System::Drawing::Size(491, 247);
 			this->PopupMotorJaCadastrado->TabIndex = 19;
@@ -372,7 +372,7 @@ namespace Mantenikola {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(549, 370);
+			this->ClientSize = System::Drawing::Size(634, 370);
 			this->Controls->Add(this->PopupMotorJaCadastrado);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->labelMotorCadastrado);
@@ -395,7 +395,7 @@ namespace Mantenikola {
 			this->Controls->Add(this->botãoRetornar);
 			this->Name = L"TelaCadastro";
 			this->Text = L"Tela de Cadastro";
-			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &TelaCadastro::TelaCadastro_FormClosing);
+			//this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &TelaCadastro::TelaCadastro_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &TelaCadastro::TelaCadastro_Load);
 			this->PopupMotorJaCadastrado->ResumeLayout(false);
 			this->PopupMotorJaCadastrado->PerformLayout();
@@ -469,7 +469,7 @@ namespace Mantenikola {
 		else { 
 			try {
 				nSerie = _int64::Parse(textoNumeroDeSerie->Text);
-				if ((nSerie / 100000) % 100 > 52 || nSerie > 100000000000 || nSerie < 0) {
+				if ((nSerie / 100000) % 100 > 52 || nSerie > 100000000000 || nSerie < 10000000000) {
 					labelErroNSerie->Text = "Número de Série inválido (fora da faixa)";
 					return FALSE;
 				}
@@ -529,8 +529,9 @@ namespace Mantenikola {
 		registroFalha->ShowDialog();
 		this->Close();
 	}
+			 /*
 	private: System::Void TelaCadastro_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
 		Application::Exit();
-	}
+	}*/
 };
 }
