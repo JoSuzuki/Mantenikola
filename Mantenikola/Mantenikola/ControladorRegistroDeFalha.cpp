@@ -14,7 +14,7 @@ System::Data::DataTable ^ ControladorRegistroDeFalha::getTabelaDeFalhas()
 	return Falha::tabelaDeFalhas();
 }
 
-bool ControladorRegistroDeFalha::updateFalha(__int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
+bool ControladorRegistroDeFalha::updateFalha(_int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
 {
 	return Falha::updateFalha(numeroDeSerie, modelo, dataDeEntrada, providencia, nomeModoDeFalha, mecanico, descricaoDeOutro);
 }

@@ -46,7 +46,7 @@ System::Data::DataTable ^ FalhaDAO::tabelaDeFalhas()
 	return dataTable;
 }
 
-bool FalhaDAO::updateFalha(__int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
+bool FalhaDAO::updateFalha(_int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
 {
 	
 	try {

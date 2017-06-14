@@ -10,7 +10,7 @@ System::Data::DataTable ^ Falha::tabelaDeFalhas()
 	return FalhaDAO::tabelaDeFalhas();
 }
 
-bool Falha::updateFalha(__int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
+bool Falha::updateFalha(_int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
 {
 	return FalhaDAO::updateFalha(numeroDeSerie, modelo, dataDeEntrada, providencia, nomeModoDeFalha, mecanico, descricaoDeOutro);
 }
