@@ -22,7 +22,7 @@ vector<Modelo*> ControladorCadastroDeMotor::getModelos()
 } 
 
 
-bool ControladorCadastroDeMotor::cadastarMotor(_int64 numeroDeSerie, string modelo, string data, string proprietario)
+bool ControladorCadastroDeMotor::cadastrarMotor(_int64 numeroDeSerie, string modelo, string data, string proprietario)
 {
 	int id_proprietario;
 	cout << proprietario << endl;

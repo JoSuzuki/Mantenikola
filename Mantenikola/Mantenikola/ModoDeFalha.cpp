@@ -3,6 +3,7 @@
 
 ModoDeFalha::ModoDeFalha(string nome)
 {
+	this->nome = nome;
 }
 
 string ModoDeFalha::getNome()

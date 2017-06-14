@@ -378,7 +378,9 @@ namespace Mantenikola {
 		}
 #pragma endregion
 	private: System::Void telaRegistroDeFalha1_Load(System::Object^  sender, System::EventArgs^  e) {
-	
+		telaRegistroDeFalha2->Hide();
+		AllocConsole();
+		freopen("CONOUT$", "w", stdout);
 		
 		ControladorRegistroDeFalha::materializarModosDeFalha();
 		for (int i = 0; i < ControladorRegistroDeFalha::getModosDeFalha().size(); i++) {
@@ -395,15 +397,6 @@ namespace Mantenikola {
 
 		bSource->DataSource = tabelaFalha;
 		tabelaMotores->DataSource = bSource;
-
-
-		telaRegistroDeFalha2->Hide();
-
-		//BindingSource^ bSource = gcnew BindingSource();
-
-		//bSource->DataSource = tabelaFalha;
-		//tabelaMotores->DataSource = bSource;
-
 	}
 	
 	private: System::Void botãoCancelar_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -418,6 +411,9 @@ namespace Mantenikola {
 		telaRegistroDeFalha2->Hide();
 	}
 	private: System::Void botãoCadastrar_Click(System::Object^  sender, System::EventArgs^  e) {
+		erroModoDeFalha->Text = "";
+		erroProvidencia->Text = "";
+
 		if (String::IsNullOrEmpty(cbModoDeFalha->Text) || String::IsNullOrWhiteSpace(cbModoDeFalha-> Text)) {
 			erroModoDeFalha->Text = "Selecione um modo de falha!";
 		}

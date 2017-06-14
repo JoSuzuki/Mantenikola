@@ -418,7 +418,7 @@ namespace Mantenikola {
 			proprietario = msclr::interop::marshal_as<string>(cbProprietario->Text);
 
 			
-			if (ControladorCadastroDeMotor::cadastarMotor(nSerie, modelo, data, proprietario)) {
+			if (ControladorCadastroDeMotor::cadastrarMotor(nSerie, modelo, data, proprietario)) {
 				labelMotorCadastrado->Text = "Motor Cadastrado!";
 			}
 			else {
