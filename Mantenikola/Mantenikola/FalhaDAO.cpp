@@ -4,6 +4,8 @@
 #include <cppconn/resultset.h>
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
+#include <msclr\marshal_cppstd.h>
+
 
 
 FalhaDAO::FalhaDAO()
@@ -15,14 +17,30 @@ System::Data::DataTable ^ FalhaDAO::tabelaDeFalhas()
 	System::Data::DataTable ^ dataTable = gcnew System::Data::DataTable();
 	dataTable->Columns->Add("Modelo");
 	dataTable->Columns->Add("Numero de Serie");
-	dataTable->Columns->Add("Dias na oficina");
+	dataTable->Columns->Add("Data de entrada");
 	dataTable->Columns->Add("Tipo do cliente");
 	System::Data::DataRow^ row = dataTable->NewRow();
-	row["Modelo"] = "NGB04";
-	row["Numero de Serie"] = "77772211111";
-	row["Dias na oficina"] = "3";
-	row["Tipo do cliente"] = "Fisico";
-	dataTable->Rows->Add(row);
+
+	sql::Connection * c = MyDAO::getInstance()->getConnection();
+	sql::Statement *stmt;
+	sql::ResultSet *res;
+	stmt = c->createStatement();
+	res = stmt->executeQuery("SELECT nome_modelo, numero_de_serie_motor, data_de_entrada, tipo_cpf_cnpj FROM falha INNER JOIN motor ON falha.nome_modelo_motor = motor.nome_modelo && falha.numero_de_serie_motor = motor.numero_de_serie INNER JOIN proprietario ON proprietario.Id = motor.Id_Proprietario");
+	while (res->next()) {
+		System::Data::DataRow^ row = dataTable->NewRow();
+		string modelo = res->getString("nome_modelo");
+		row["Modelo"] = msclr::interop::marshal_as<System::String^>(modelo);
+		row["Numero de Serie"] = res->getInt64("numero_de_serie_motor");
+		string dataDeEntrada = res->getString("data_de_entrada");
+		row["Data de entrada"] = msclr::interop::marshal_as<System::String^>(dataDeEntrada);
+		if (res->getBoolean("tipo_cpf_cnpj")) {
+			row["Tipo do cliente"] = "Juridico";
+		}
+		else {
+			row["Tipo do cliente"] = "Fisico";
+		}
+		dataTable->Rows->Add(row);
+	}
 	return dataTable;
 }
 

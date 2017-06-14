@@ -5,6 +5,11 @@ Falha::Falha()
 {
 }
 
+System::Data::DataTable ^ Falha::tabelaDeFalhas()
+{
+	return FalhaDAO::tabelaDeFalhas();
+}
+
 void Falha::setDataDeEntrada(string dataDeEntrada)
 {
 	this->dataDeEntrada = dataDeEntrada;
