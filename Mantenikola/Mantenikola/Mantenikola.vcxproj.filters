@@ -63,6 +63,15 @@
     <ClCompile Include="telaRegistroDeFalha1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="telaRegistroDeFalha2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModoDeFalhaDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModoDeFalha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ControladorRegistroDeFalha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -117,6 +126,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ControladorRegistroDeFalha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="telaRegistroDeFalha2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModoDeFalhaDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModoDeFalha.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
