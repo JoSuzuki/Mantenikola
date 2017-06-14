@@ -464,6 +464,7 @@ namespace Mantenikola {
 
 			if (ControladorRegistroDeFalha::updateFalha(nSerie, modelo, dataDeEntrada, providencia, modoDeFalha, mecanico, descricaoOutro)) {
 				labelResultadoCadastro->Text = "Falha Registrada! =)";
+				this->Close();
 			
 			}
 			else {
