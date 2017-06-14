@@ -522,15 +522,19 @@ namespace Mantenikola {
 		PopupMotorJaCadastrado->Hide();
 	}
 	private: System::Void botãoCadastrarNovaFalha_Click(System::Object^  sender, System::EventArgs^  e) {
+		_int64 nSerie;
+		string data, modelo;
+
+		nSerie = _int64::Parse(textoNumeroDeSerie->Text);
+		data = msclr::interop::marshal_as<string>(textoDataDeEntrada->Text);
+		modelo = msclr::interop::marshal_as<string>(cbModelo->Text);
+
 		PopupMotorJaCadastrado->Hide();
 		this->Hide();
+		ControladorCadastroDeMotor::cadastrarFalha(nSerie, modelo, data);
 		telaRegistroDeFalha1 ^registroFalha = gcnew telaRegistroDeFalha1();
 		registroFalha->ShowDialog();
 		this->Close();
 	}
-			 /*
-	private: System::Void TelaCadastro_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
-		Application::Exit();
-	}*/
 };
 }

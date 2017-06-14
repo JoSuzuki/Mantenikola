@@ -66,6 +66,8 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Label^  erroModoDeFalha;
 	private: System::Windows::Forms::Label^  erroProvidencia;
 	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::Label^  labelResultadoCadastro;
+	private: System::Windows::Forms::Label^  erroMecanico;
 
 	protected:
 
@@ -89,6 +91,7 @@ namespace Mantenikola {
 			this->botãoCancelar = (gcnew System::Windows::Forms::Button());
 			this->tabelaMotores = (gcnew System::Windows::Forms::DataGridView());
 			this->telaRegistroDeFalha2 = (gcnew System::Windows::Forms::GroupBox());
+			this->labelResultadoCadastro = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->erroProvidencia = (gcnew System::Windows::Forms::Label());
 			this->erroModoDeFalha = (gcnew System::Windows::Forms::Label());
@@ -106,6 +109,7 @@ namespace Mantenikola {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->erroMecanico = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaMotores))->BeginInit();
 			this->telaRegistroDeFalha2->SuspendLayout();
 			this->SuspendLayout();
@@ -177,6 +181,8 @@ namespace Mantenikola {
 			// 
 			// telaRegistroDeFalha2
 			// 
+			this->telaRegistroDeFalha2->Controls->Add(this->erroMecanico);
+			this->telaRegistroDeFalha2->Controls->Add(this->labelResultadoCadastro);
 			this->telaRegistroDeFalha2->Controls->Add(this->label9);
 			this->telaRegistroDeFalha2->Controls->Add(this->erroProvidencia);
 			this->telaRegistroDeFalha2->Controls->Add(this->erroModoDeFalha);
@@ -200,6 +206,15 @@ namespace Mantenikola {
 			this->telaRegistroDeFalha2->TabIndex = 19;
 			this->telaRegistroDeFalha2->TabStop = false;
 			this->telaRegistroDeFalha2->Text = L"Registro de falha";
+			// 
+			// labelResultadoCadastro
+			// 
+			this->labelResultadoCadastro->AutoSize = true;
+			this->labelResultadoCadastro->ForeColor = System::Drawing::Color::Blue;
+			this->labelResultadoCadastro->Location = System::Drawing::Point(253, 354);
+			this->labelResultadoCadastro->Name = L"labelResultadoCadastro";
+			this->labelResultadoCadastro->Size = System::Drawing::Size(0, 13);
+			this->labelResultadoCadastro->TabIndex = 31;
 			// 
 			// label9
 			// 
@@ -354,6 +369,15 @@ namespace Mantenikola {
 			this->label8->TabIndex = 14;
 			this->label8->Text = L"Motor";
 			// 
+			// erroMecanico
+			// 
+			this->erroMecanico->AutoSize = true;
+			this->erroMecanico->ForeColor = System::Drawing::Color::Red;
+			this->erroMecanico->Location = System::Drawing::Point(409, 131);
+			this->erroMecanico->Name = L"erroMecanico";
+			this->erroMecanico->Size = System::Drawing::Size(0, 13);
+			this->erroMecanico->TabIndex = 32;
+			// 
 			// telaRegistroDeFalha1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -411,8 +435,13 @@ namespace Mantenikola {
 		telaRegistroDeFalha2->Hide();
 	}
 	private: System::Void botãoCadastrar_Click(System::Object^  sender, System::EventArgs^  e) {
+		__int64 nSerie;
+		string modelo, dataDeEntrada, providencia, modoDeFalha, mecanico, descricaoOutro;
+
+		descricaoOutro = "";
 		erroModoDeFalha->Text = "";
 		erroProvidencia->Text = "";
+		erroMecanico->Text = "";
 
 		if (String::IsNullOrEmpty(cbModoDeFalha->Text) || String::IsNullOrWhiteSpace(cbModoDeFalha-> Text)) {
 			erroModoDeFalha->Text = "Selecione um modo de falha!";
@@ -420,7 +449,26 @@ namespace Mantenikola {
 		else if (String::IsNullOrEmpty(textProvidencia->Text) || String::IsNullOrWhiteSpace(textProvidencia->Text)) {
 			erroProvidencia->Text = "Descreva a providência tomada!";
 		}
+		else if (String::IsNullOrEmpty(textBox2->Text) || String::IsNullOrWhiteSpace(textBox2->Text)) {
+			erroMecanico->Text = "Digite o nome do mecânico!";
+		}
 		else {
+
+			nSerie = _int64::Parse(tabelaMotores->SelectedRows[0]->Cells[1]->Value->ToString());
+			modelo = msclr::interop::marshal_as<string>(tabelaMotores->SelectedRows[0]->Cells[0]->Value->ToString());
+			dataDeEntrada = msclr::interop::marshal_as<string>(tabelaMotores->SelectedRows[0]->Cells[2]->Value->ToString());
+			providencia = msclr::interop::marshal_as<string>(textProvidencia->Text);
+			modoDeFalha = msclr::interop::marshal_as<string>(cbModoDeFalha->Text);
+			mecanico = msclr::interop::marshal_as<string>(textBox2->Text);
+			descricaoOutro = msclr::interop::marshal_as<string>(textBox4->Text);
+
+			if (ControladorRegistroDeFalha::updateFalha(nSerie, modelo, dataDeEntrada, providencia, modoDeFalha, mecanico, descricaoOutro)) {
+				labelResultadoCadastro->Text = "Falha Registrada! =)";
+			
+			}
+			else {
+				labelResultadoCadastro->Text = "Falha NÃO Registrada! =(";
+			}
 
 		}
 
