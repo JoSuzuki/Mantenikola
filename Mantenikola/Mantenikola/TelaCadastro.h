@@ -318,7 +318,7 @@ namespace Mantenikola {
 			this->PopupMotorJaCadastrado->Controls->Add(this->botãoCancelar);
 			this->PopupMotorJaCadastrado->Controls->Add(this->botãoCadastrarNovaFalha);
 			this->PopupMotorJaCadastrado->Controls->Add(this->label9);
-			this->PopupMotorJaCadastrado->Location = System::Drawing::Point(77, 42);
+			this->PopupMotorJaCadastrado->Location = System::Drawing::Point(86, 32);
 			this->PopupMotorJaCadastrado->Name = L"PopupMotorJaCadastrado";
 			this->PopupMotorJaCadastrado->Size = System::Drawing::Size(491, 247);
 			this->PopupMotorJaCadastrado->TabIndex = 19;
@@ -395,7 +395,6 @@ namespace Mantenikola {
 			this->Controls->Add(this->botãoRetornar);
 			this->Name = L"TelaCadastro";
 			this->Text = L"Tela de Cadastro";
-			//this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &TelaCadastro::TelaCadastro_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &TelaCadastro::TelaCadastro_Load);
 			this->PopupMotorJaCadastrado->ResumeLayout(false);
 			this->PopupMotorJaCadastrado->PerformLayout();
