@@ -19,7 +19,7 @@ System::Data::DataTable ^ FalhaDAO::tabelaDeFalhas()
 	dataTable->Columns->Add("Tipo do cliente");
 	System::Data::DataRow^ row = dataTable->NewRow();
 	row["Modelo"] = "NGB04";
-	row["Numero de Serie"] = "77772211111";
+	row["Numero de Serie"] = 77772211111;
 	row["Dias na oficina"] = "3";
 	row["Tipo do cliente"] = "Fisico";
 	dataTable->Rows->Add(row);

@@ -155,7 +155,6 @@
     <ClCompile Include="ProprietarioDAO.cpp" />
     <ClCompile Include="TelaCadastro.cpp" />
     <ClCompile Include="telaRegistroDeFalha1.cpp" />
-    <ClCompile Include="telaRegistroDeFalha2.cpp" />
     <ClCompile Include="TelaRelatorios.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,9 +182,6 @@
     <ClInclude Include="telaRegistroDeFalha1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="telaRegistroDeFalha2.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="TelaRelatorios.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -209,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaRegistroDeFalha1.resx">
       <DependentUpon>telaRegistroDeFalha1.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="telaRegistroDeFalha2.resx">
-      <DependentUpon>telaRegistroDeFalha2.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaRelatorios.resx">
       <DependentUpon>TelaRelatorios.h</DependentUpon>
