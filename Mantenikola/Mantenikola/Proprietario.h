@@ -19,6 +19,7 @@ public:
 	void setNome(string nome);
 	string getNome();
 	int getId();
+	void setId(int id);
 	static vector<Proprietario*> getProprietarios();
 	virtual ~Proprietario();
 };

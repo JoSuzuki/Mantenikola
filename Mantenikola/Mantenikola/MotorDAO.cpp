@@ -10,7 +10,7 @@ MotorDAO::MotorDAO()
 {
 }
 
-Motor* MotorDAO::getMotor(int numeroDeSerie, string modelo)
+Motor* MotorDAO::getMotor(_int64 numeroDeSerie, string modelo)
 {
 	Motor* motor = nullptr;
 	try {
@@ -94,7 +94,7 @@ bool MotorDAO::existeMotor(int numeroDeSerie, string modelo)
 	return existe;
 }*/
 
-bool MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo, int id_proprietario)
+bool MotorDAO::cadastrarMotor(_int64 numeroDeSerie, string modelo, int id_proprietario)
 {
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
@@ -107,6 +107,11 @@ bool MotorDAO::cadastrarMotor(int numeroDeSerie, string modelo, int id_proprieta
 		stmt->execute("INSERT INTO motor(Numero_de_serie, Nome_modelo, Id_proprietario) VALUES ("+ to_string(numeroDeSerie) + ", '" + modelo + "',"+to_string(id_proprietario)+")");
 	}
 	catch (sql::SQLException &e) {
+		cout << "# ERR: SQLException in " << __FILE__;
+		cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+		cout << "# ERR: " << e.what();
+		cout << " (MySQL error code: " << e.getErrorCode();
+		cout << ", SQLState: " << e.getSQLState() << " )" << endl;
 		return false;
 	}
 	return true;

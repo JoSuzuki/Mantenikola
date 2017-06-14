@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CA8305B1-AD51-4064-8A26-81146633171C}</ProjectGuid>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>Mantenikola</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -29,21 +29,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CLRSupport>true</CLRSupport>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -101,12 +101,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>CPPCONN_PUBLIC_FUNC=;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\pcs3443\boost_1_64_0;D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Fabio\Downloads\Eng Soft\mysql-connector-c++-noinstall-1.1.9-winx64\include;C:\Users\Fabio\Downloads\Eng Soft\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Pedro\Documents\Visual Studio 2017\mysql-connector-c++-noinstall-1.1.9-winx64\include;C:\Users\Pedro\Documents\Visual Studio 2017\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>mysqlcppconn-static.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\pcs3443\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Pedro\Documents\Visual Studio 2017\mysql-connector-c++-noinstall-1.1.9-winx64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
@@ -147,10 +148,10 @@
     <ClCompile Include="MyDAO.cpp" />
     <ClCompile Include="PessoaFisica.cpp" />
     <ClCompile Include="PessoaJuridica.cpp" />
-    <ClCompile Include="PopupMotorJaCadastrado.cpp" />
     <ClCompile Include="Proprietario.cpp" />
     <ClCompile Include="ProprietarioDAO.cpp" />
     <ClCompile Include="TelaCadastro.cpp" />
+    <ClCompile Include="telaRegistroDeFalha1.cpp" />
     <ClCompile Include="TelaRelatorios.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -167,12 +168,12 @@
     <ClInclude Include="MyDAO.h" />
     <ClInclude Include="PessoaFisica.h" />
     <ClInclude Include="PessoaJuridica.h" />
-    <ClInclude Include="PopupMotorJaCadastrado.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="Proprietario.h" />
     <ClInclude Include="ProprietarioDAO.h" />
     <ClInclude Include="TelaCadastro.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="telaRegistroDeFalha1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="TelaRelatorios.h">
@@ -193,11 +194,11 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
-      <DependentUpon>PopupMotorJaCadastrado.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <DependentUpon>TelaCadastro.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaRegistroDeFalha1.resx">
+      <DependentUpon>telaRegistroDeFalha1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaRelatorios.resx">
       <DependentUpon>TelaRelatorios.h</DependentUpon>

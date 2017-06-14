@@ -31,7 +31,7 @@ Proprietario* ProprietarioDAO::getProprietario(int id)
 				proprietario = new PessoaFisica();
 			}
 		}
-		//delete res;
+		// delete res;
 		//delete stmt;
 	}
 	catch (sql::SQLException &e) {
@@ -64,7 +64,7 @@ vector<Proprietario*> ProprietarioDAO::getProprietarios()
 	sql::Statement *stmt;
 	sql::ResultSet *res;
 	stmt = c->createStatement();
-	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ from Proprietario");
+	res = stmt->executeQuery("SELECT Nome, Tipo_CPF_CNPJ, Id from Proprietario");
 	while (res->next()) {
 		if (res->getBoolean("Tipo_CPF_CNPJ")) {
 			proprietario = new PessoaFisica();
@@ -73,6 +73,7 @@ vector<Proprietario*> ProprietarioDAO::getProprietarios()
 			proprietario = new PessoaJuridica();
 		}
 		proprietario->setNome(res->getString("Nome"));
+		proprietario->setId(res->getInt("Id"));
 		vetorDeProprietarios.push_back(proprietario);
 	}
 	return vetorDeProprietarios;

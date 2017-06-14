@@ -21,6 +21,11 @@ int Proprietario::getId()
 	return this->id;
 }
 
+void Proprietario::setId(int id)
+{
+	this->id = id;
+}
+
 vector<Proprietario*> Proprietario::getProprietarios()
 {
 	return ProprietarioDAO::getProprietarios();

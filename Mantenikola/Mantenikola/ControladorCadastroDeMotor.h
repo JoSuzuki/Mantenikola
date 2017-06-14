@@ -10,18 +10,18 @@ using namespace std;
 class ControladorCadastroDeMotor
 {
 private:
-	vector<Modelo*> vetorDeModelos;
-	vector<Proprietario*> vetorDeProprietarios;
+	static vector<Modelo*> vetorDeModelos;
+	static vector<Proprietario*> vetorDeProprietarios;
 
 
 public:
 	ControladorCadastroDeMotor();
-	void materializarModelos();
-	vector<Modelo*> getModelos();
-	bool cadastarMotor(int numeroDeSerie, string modelo, string data, string proprietario); //cadastro falha caso cadastro de motor tenha sido bem sucedido
-	void materializarProprietarios();
-	void cadastrarFalha(int numeroDeSerie, string modelo, string data);
-	vector<Proprietario*> getProprietarios();
+	static void materializarModelos();
+	static vector<Modelo*> getModelos();
+	static bool cadastarMotor(_int64 numeroDeSerie, string modelo, string data, string proprietario); //cadastro falha caso cadastro de motor tenha sido bem sucedido
+	static void materializarProprietarios();
+	static void cadastrarFalha(_int64 numeroDeSerie, string modelo, string data);
+	static vector<Proprietario*> getProprietarios();
 	virtual ~ControladorCadastroDeMotor();
 };
 
