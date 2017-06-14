@@ -9,6 +9,7 @@ class FalhaDAO
 {
 public:
 	FalhaDAO();
+	static System::Data::DataTable^ tabelaDeFalhas();
 	static void cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string modelo);
 	virtual ~FalhaDAO();
 };
