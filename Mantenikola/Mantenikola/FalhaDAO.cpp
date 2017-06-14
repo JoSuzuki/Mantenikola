@@ -10,6 +10,22 @@ FalhaDAO::FalhaDAO()
 {
 }
 
+System::Data::DataTable ^ FalhaDAO::tabelaDeFalhas()
+{
+	System::Data::DataTable ^ dataTable = gcnew System::Data::DataTable();
+	dataTable->Columns->Add("Modelo");
+	dataTable->Columns->Add("Numero de Serie");
+	dataTable->Columns->Add("Dias na oficina");
+	dataTable->Columns->Add("Tipo do cliente");
+	System::Data::DataRow^ row = dataTable->NewRow();
+	row["Modelo"] = "NGB04";
+	row["Numero de Serie"] = "77772211111";
+	row["Dias na oficina"] = "3";
+	row["Tipo do cliente"] = "Fisico";
+	dataTable->Rows->Add(row);
+	return dataTable;
+}
+
 
 void FalhaDAO::cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string modelo)
 {
