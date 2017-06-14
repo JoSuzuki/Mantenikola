@@ -11,7 +11,7 @@ ModoDeFalhaDAO::ModoDeFalhaDAO()
 
 vector<ModoDeFalha*> ModoDeFalhaDAO::materializarModosDeFalha()
 {
-	vector<ModoDeFalha*> vetorDeModelos;
+	vector<ModoDeFalha*> vetorDeModosDeFalha;
 
 	sql::Connection * c = MyDAO::getInstance()->getConnection();
 
@@ -19,14 +19,14 @@ vector<ModoDeFalha*> ModoDeFalhaDAO::materializarModosDeFalha()
 	sql::Statement *stmt;
 	sql::ResultSet *res;
 	stmt = c->createStatement();
-	res = stmt->executeQuery("SELECT nome from Modelo");
+	res = stmt->executeQuery("SELECT nome from ModoDeFalha");
 	while (res->next()) {
 		ModoDeFalha* modoDeFalha = new ModoDeFalha(res->getString("nome"));
-		vetorDeModelos.push_back(modoDeFalha);
+		vetorDeModosDeFalha.push_back(modoDeFalha);
 	}
 	//delete res;
 	//delete stmt;
-	return vetorDeModelos;
+	return vetorDeModosDeFalha;
 }
 
 ModoDeFalhaDAO::~ModoDeFalhaDAO()
