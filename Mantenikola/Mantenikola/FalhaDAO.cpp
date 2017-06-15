@@ -64,7 +64,7 @@ bool FalhaDAO::updateFalha(_int64 numeroDeSerie, string modelo, string dataDeEnt
 }
 
 
-void FalhaDAO::cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string modelo)
+void FalhaDAO::cadastrarFalha(string dataDeEntrada, _int64 numeroDeSerie, string modelo)
 {
 	try {
 		sql::Connection * c = MyDAO::getInstance()->getConnection();
@@ -74,7 +74,7 @@ void FalhaDAO::cadastrarFalha(string dataDeEntrada, int numeroDeSerie, string mo
 		stmt = c->createStatement();
 		//System::String^ numeroUsp = msclr::interop::marshal_as<System::String^>(motor->getEstado());
 
-		stmt->execute("INSERT INTO falha(Data_de_entrada, nome_modelo, numero_de_serie_motor) VALUES ('"+ dataDeEntrada +"','"+modelo+"',"+to_string(numeroDeSerie)+")");
+		stmt->execute("INSERT INTO falha(Data_de_entrada, nome_modelo_motor, numero_de_serie_motor) VALUES ('"+ dataDeEntrada +"','"+modelo+"',"+to_string(numeroDeSerie)+")");
 	}
 	catch (sql::SQLException &e) {
 		
