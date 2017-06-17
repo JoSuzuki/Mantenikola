@@ -72,6 +72,9 @@
     <ClCompile Include="ControladorRegistroDeFalha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ControladorRelatorios.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyDAO.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ModoDeFalha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ControladorRelatorios.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

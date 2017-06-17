@@ -91,6 +91,7 @@ namespace Mantenikola {
 			this->botãoCancelar = (gcnew System::Windows::Forms::Button());
 			this->tabelaMotores = (gcnew System::Windows::Forms::DataGridView());
 			this->telaRegistroDeFalha2 = (gcnew System::Windows::Forms::GroupBox());
+			this->erroMecanico = (gcnew System::Windows::Forms::Label());
 			this->labelResultadoCadastro = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->erroProvidencia = (gcnew System::Windows::Forms::Label());
@@ -109,7 +110,6 @@ namespace Mantenikola {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->erroMecanico = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaMotores))->BeginInit();
 			this->telaRegistroDeFalha2->SuspendLayout();
 			this->SuspendLayout();
@@ -206,6 +206,15 @@ namespace Mantenikola {
 			this->telaRegistroDeFalha2->TabIndex = 19;
 			this->telaRegistroDeFalha2->TabStop = false;
 			this->telaRegistroDeFalha2->Text = L"Registro de falha";
+			// 
+			// erroMecanico
+			// 
+			this->erroMecanico->AutoSize = true;
+			this->erroMecanico->ForeColor = System::Drawing::Color::Red;
+			this->erroMecanico->Location = System::Drawing::Point(409, 131);
+			this->erroMecanico->Name = L"erroMecanico";
+			this->erroMecanico->Size = System::Drawing::Size(0, 13);
+			this->erroMecanico->TabIndex = 32;
 			// 
 			// labelResultadoCadastro
 			// 
@@ -368,15 +377,6 @@ namespace Mantenikola {
 			this->label8->Size = System::Drawing::Size(34, 13);
 			this->label8->TabIndex = 14;
 			this->label8->Text = L"Motor";
-			// 
-			// erroMecanico
-			// 
-			this->erroMecanico->AutoSize = true;
-			this->erroMecanico->ForeColor = System::Drawing::Color::Red;
-			this->erroMecanico->Location = System::Drawing::Point(409, 131);
-			this->erroMecanico->Name = L"erroMecanico";
-			this->erroMecanico->Size = System::Drawing::Size(0, 13);
-			this->erroMecanico->TabIndex = 32;
 			// 
 			// telaRegistroDeFalha1
 			// 

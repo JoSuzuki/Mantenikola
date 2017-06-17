@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClCompile Include="ControladorCadastroDeMotor.cpp" />
     <ClCompile Include="ControladorRegistroDeFalha.cpp" />
+    <ClCompile Include="ControladorRelatorios.cpp" />
     <ClCompile Include="Falha.cpp" />
     <ClCompile Include="FalhaDAO.cpp" />
     <ClCompile Include="MenuPrincipal.cpp" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="ControladorCadastroDeMotor.h" />
     <ClInclude Include="ControladorRegistroDeFalha.h" />
+    <ClInclude Include="ControladorRelatorios.h" />
     <ClInclude Include="Falha.h" />
     <ClInclude Include="FalhaDAO.h" />
     <ClInclude Include="MenuPrincipal.h">
