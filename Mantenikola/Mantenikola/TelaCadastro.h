@@ -44,7 +44,6 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Button^  botãoRetornar;
 	private: System::Windows::Forms::ComboBox^  cbModelo;
 	private: System::Windows::Forms::Button^  botãoCadastrar;
-
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
@@ -52,11 +51,8 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::ComboBox^  cbProprietario;
-
 	private: System::Windows::Forms::TextBox^  textoNumeroDeSerie;
 	private: System::Windows::Forms::TextBox^  textoDataDeEntrada;
-
-
 	private: System::Windows::Forms::Label^  labelMantenikola;
 	private: System::Windows::Forms::Label^  labelErroNSerie;
 	private: System::Windows::Forms::Label^  labelErroDataEntrada;
@@ -69,8 +65,6 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Button^  botãoCancelar;
 	private: System::Windows::Forms::Button^  botãoCadastrarNovaFalha;
 	private: System::Windows::Forms::Label^  label9;
-
-
 
 	private:
 		/// <summary>
@@ -85,6 +79,7 @@ namespace Mantenikola {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->SuspendLayout();
 			this->botãoRetornar = (gcnew System::Windows::Forms::Button());
 			this->cbModelo = (gcnew System::Windows::Forms::ComboBox());
 			this->botãoCadastrar = (gcnew System::Windows::Forms::Button());
@@ -110,8 +105,7 @@ namespace Mantenikola {
 			this->botãoCadastrarNovaFalha = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->PopupMotorJaCadastrado->SuspendLayout();
-			this->SuspendLayout();
-			// 
+			//
 			// botãoRetornar
 			// 
 			this->botãoRetornar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));

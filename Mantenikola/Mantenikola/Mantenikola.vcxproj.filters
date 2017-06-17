@@ -121,9 +121,6 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="PopupMotorJaCadastrado.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaCadastro.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>

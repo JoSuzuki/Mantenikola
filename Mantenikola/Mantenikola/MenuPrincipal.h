@@ -56,11 +56,11 @@ namespace Mantenikola {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->SuspendLayout();
 			this->botãoCadastroMotor = (gcnew System::Windows::Forms::Button());
 			this->botãoRelatórios = (gcnew System::Windows::Forms::Button());
 			this->botãoRegistroDeFalha = (gcnew System::Windows::Forms::Button());
 			this->botãoSair = (gcnew System::Windows::Forms::Button());
-			this->SuspendLayout();
 			// 
 			// botãoCadastroMotor
 			// 
