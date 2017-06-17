@@ -63,6 +63,15 @@
     <ClCompile Include="telaRegistroDeFalha1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ModoDeFalhaDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ModoDeFalha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ControladorRegistroDeFalha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyDAO.h">
@@ -113,6 +122,15 @@
     <ClInclude Include="telaRegistroDeFalha1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ControladorRegistroDeFalha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModoDeFalhaDAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ModoDeFalha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="mtostestes.txt" />
@@ -130,5 +148,8 @@
     <EmbeddedResource Include="telaRegistroDeFalha1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

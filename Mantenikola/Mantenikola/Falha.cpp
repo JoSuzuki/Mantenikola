@@ -5,6 +5,16 @@ Falha::Falha()
 {
 }
 
+System::Data::DataTable ^ Falha::tabelaDeFalhas()
+{
+	return FalhaDAO::tabelaDeFalhas();
+}
+
+bool Falha::updateFalha(_int64 numeroDeSerie, string modelo, string dataDeEntrada, string providencia, string nomeModoDeFalha, string mecanico, string descricaoDeOutro)
+{
+	return FalhaDAO::updateFalha(numeroDeSerie, modelo, dataDeEntrada, providencia, nomeModoDeFalha, mecanico, descricaoDeOutro);
+}
+
 void Falha::setDataDeEntrada(string dataDeEntrada)
 {
 	this->dataDeEntrada = dataDeEntrada;
