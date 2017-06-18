@@ -9,6 +9,7 @@ class ModoDeFalhaDAO
 {
 public:
 	ModoDeFalhaDAO();
+	static System::Data::DataTable ^ getTabelaDeModosDeFalhaPorModelo(string modoDeFalha);
 	static vector<ModoDeFalha*> materializarModosDeFalha();
 	virtual ~ModoDeFalhaDAO();
 };

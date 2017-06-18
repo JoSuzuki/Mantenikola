@@ -10,6 +10,7 @@ private:
 public:
 	ModoDeFalha(string nome);
 	string getNome();
+	static System::Data::DataTable ^ getTabelaDeModosDeFalhaPorModelo(string modoDeFalha);
 	static vector<ModoDeFalha*> materializarModosDeFalha();
 	virtual ~ModoDeFalha();
 };

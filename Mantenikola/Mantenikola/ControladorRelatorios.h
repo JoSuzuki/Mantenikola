@@ -15,6 +15,7 @@ private:
 
 public:
 	ControladorRelatorios();
+	static System::Data::DataTable^ getTabelaDeModosDeFalhaPorModelo(string modoDeFalha);
 	static void materializarModosDeFalha();			//Não se se vai precisar,
 	static vector<ModoDeFalha*> getModosDeFalha();	//   mas ta aqui.
 	static void materializarModelos();

@@ -9,6 +9,11 @@ ControladorRelatorios::ControladorRelatorios()
 {
 }
 
+System::Data::DataTable ^ ControladorRelatorios::getTabelaDeModosDeFalhaPorModelo(string modoDeFalha)
+{
+	return ModoDeFalha::getTabelaDeModosDeFalhaPorModelo(modoDeFalha);
+}
+
 void ControladorRelatorios::materializarModosDeFalha()
 {
 	vetorDeModosDeFalha = ModoDeFalha::materializarModosDeFalha();

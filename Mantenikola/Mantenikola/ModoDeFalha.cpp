@@ -11,6 +11,11 @@ string ModoDeFalha::getNome()
 	return this->nome;
 }
 
+System::Data::DataTable ^ ModoDeFalha::getTabelaDeModosDeFalhaPorModelo(string modoDeFalha)
+{
+	return ModoDeFalhaDAO::getTabelaDeModosDeFalhaPorModelo(modoDeFalha);
+}
+
 vector<ModoDeFalha*> ModoDeFalha::materializarModosDeFalha()
 {
 	return ModoDeFalhaDAO::materializarModosDeFalha();
