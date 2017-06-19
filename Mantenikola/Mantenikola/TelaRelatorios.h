@@ -221,9 +221,15 @@ namespace Mantenikola {
 			// 
 			// tabelaRelatorioModelo
 			// 
+			this->tabelaRelatorioModelo->AllowUserToAddRows = false;
+			this->tabelaRelatorioModelo->AllowUserToDeleteRows = false;
+			this->tabelaRelatorioModelo->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
+			this->tabelaRelatorioModelo->AutoSizeRowsMode = System::Windows::Forms::DataGridViewAutoSizeRowsMode::DisplayedHeaders;
 			this->tabelaRelatorioModelo->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tabelaRelatorioModelo->Location = System::Drawing::Point(0, 90);
 			this->tabelaRelatorioModelo->Name = L"tabelaRelatorioModelo";
+			this->tabelaRelatorioModelo->ReadOnly = true;
+			this->tabelaRelatorioModelo->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->tabelaRelatorioModelo->Size = System::Drawing::Size(484, 232);
 			this->tabelaRelatorioModelo->TabIndex = 0;
 			// 
@@ -288,6 +294,12 @@ namespace Mantenikola {
 	}
 
 	private: System::Void cbModelos_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+
+		DataTable^ tabelaRelatorios = ControladorRelatorios::getTabelaDeModosDeFalhaPorModelo(msclr::interop::marshal_as<string>(cbModelos->Text));
+		BindingSource^ bSource = gcnew BindingSource();
+
+		bSource->DataSource = tabelaRelatorios;
+		tabelaRelatorioModelo->DataSource = bSource;
 	}
 
 	private: System::Void botãoRetornar_Click(System::Object^  sender, System::EventArgs^  e) {
