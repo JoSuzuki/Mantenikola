@@ -68,6 +68,14 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::Label^  labelResultadoCadastro;
 	private: System::Windows::Forms::Label^  erroMecanico;
+	private: System::Windows::Forms::GroupBox^  popupFalha;
+	private: System::Windows::Forms::Button^  botãoFalha;
+	private: System::Windows::Forms::Label^  label13;
+	private: System::Windows::Forms::Label^  label11;
+	private: System::Windows::Forms::GroupBox^  popupSucesso;
+	private: System::Windows::Forms::Button^  botãoSucesso;
+	private: System::Windows::Forms::Label^  label12;
+	private: System::Windows::Forms::Label^  label10;
 
 	protected:
 
@@ -91,6 +99,14 @@ namespace Mantenikola {
 			this->botãoCancelar = (gcnew System::Windows::Forms::Button());
 			this->tabelaMotores = (gcnew System::Windows::Forms::DataGridView());
 			this->telaRegistroDeFalha2 = (gcnew System::Windows::Forms::GroupBox());
+			this->popupFalha = (gcnew System::Windows::Forms::GroupBox());
+			this->botãoFalha = (gcnew System::Windows::Forms::Button());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->popupSucesso = (gcnew System::Windows::Forms::GroupBox());
+			this->botãoSucesso = (gcnew System::Windows::Forms::Button());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->erroMecanico = (gcnew System::Windows::Forms::Label());
 			this->labelResultadoCadastro = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
@@ -112,6 +128,8 @@ namespace Mantenikola {
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaMotores))->BeginInit();
 			this->telaRegistroDeFalha2->SuspendLayout();
+			this->popupFalha->SuspendLayout();
+			this->popupSucesso->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// labelMantenikola
@@ -132,16 +150,18 @@ namespace Mantenikola {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(275, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(87, 13);
+			this->label1->Size = System::Drawing::Size(195, 29);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"Registro de falha";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 146);
+			this->label2->Location = System::Drawing::Point(12, 258);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(92, 13);
 			this->label2->TabIndex = 15;
@@ -149,7 +169,7 @@ namespace Mantenikola {
 			// 
 			// botãoContinuar
 			// 
-			this->botãoContinuar->Location = System::Drawing::Point(31, 309);
+			this->botãoContinuar->Location = System::Drawing::Point(110, 497);
 			this->botãoContinuar->Name = L"botãoContinuar";
 			this->botãoContinuar->Size = System::Drawing::Size(110, 38);
 			this->botãoContinuar->TabIndex = 16;
@@ -159,7 +179,7 @@ namespace Mantenikola {
 			// 
 			// botãoCancelar
 			// 
-			this->botãoCancelar->Location = System::Drawing::Point(483, 309);
+			this->botãoCancelar->Location = System::Drawing::Point(559, 497);
 			this->botãoCancelar->Name = L"botãoCancelar";
 			this->botãoCancelar->Size = System::Drawing::Size(110, 38);
 			this->botãoCancelar->TabIndex = 17;
@@ -171,16 +191,19 @@ namespace Mantenikola {
 			// 
 			this->tabelaMotores->AllowUserToAddRows = false;
 			this->tabelaMotores->AllowUserToDeleteRows = false;
+			this->tabelaMotores->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->tabelaMotores->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->tabelaMotores->Location = System::Drawing::Point(110, 51);
 			this->tabelaMotores->MultiSelect = false;
 			this->tabelaMotores->Name = L"tabelaMotores";
+			this->tabelaMotores->ReadOnly = true;
 			this->tabelaMotores->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->tabelaMotores->Size = System::Drawing::Size(445, 234);
+			this->tabelaMotores->Size = System::Drawing::Size(580, 417);
 			this->tabelaMotores->TabIndex = 18;
 			// 
 			// telaRegistroDeFalha2
 			// 
+			this->telaRegistroDeFalha2->Controls->Add(this->popupSucesso);
 			this->telaRegistroDeFalha2->Controls->Add(this->erroMecanico);
 			this->telaRegistroDeFalha2->Controls->Add(this->labelResultadoCadastro);
 			this->telaRegistroDeFalha2->Controls->Add(this->label9);
@@ -202,16 +225,109 @@ namespace Mantenikola {
 			this->telaRegistroDeFalha2->Controls->Add(this->label8);
 			this->telaRegistroDeFalha2->Location = System::Drawing::Point(0, 0);
 			this->telaRegistroDeFalha2->Name = L"telaRegistroDeFalha2";
-			this->telaRegistroDeFalha2->Size = System::Drawing::Size(625, 390);
+			this->telaRegistroDeFalha2->Size = System::Drawing::Size(788, 566);
 			this->telaRegistroDeFalha2->TabIndex = 19;
 			this->telaRegistroDeFalha2->TabStop = false;
 			this->telaRegistroDeFalha2->Text = L"Registro de falha";
+			// 
+			// popupFalha
+			// 
+			this->popupFalha->Controls->Add(this->botãoFalha);
+			this->popupFalha->Controls->Add(this->label13);
+			this->popupFalha->Controls->Add(this->label11);
+			this->popupFalha->Location = System::Drawing::Point(0, 1);
+			this->popupFalha->Name = L"popupFalha";
+			this->popupFalha->Size = System::Drawing::Size(362, 153);
+			this->popupFalha->TabIndex = 34;
+			this->popupFalha->TabStop = false;
+			this->popupFalha->Text = L"groupBox2";
+			// 
+			// botãoFalha
+			// 
+			this->botãoFalha->Location = System::Drawing::Point(131, 103);
+			this->botãoFalha->Name = L"botãoFalha";
+			this->botãoFalha->Size = System::Drawing::Size(75, 23);
+			this->botãoFalha->TabIndex = 33;
+			this->botãoFalha->Text = L"OK =(";
+			this->botãoFalha->UseVisualStyleBackColor = true;
+			this->botãoFalha->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoFalha_Click);
+			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(110, 57);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(129, 13);
+			this->label13->TabIndex = 32;
+			this->label13->Text = L"Erro no cadastro da falha!";
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->label11->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label11->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label11->Location = System::Drawing::Point(0, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(108, 22);
+			this->label11->TabIndex = 31;
+			this->label11->Text = L"Mantenikola";
+			// 
+			// popupSucesso
+			// 
+			this->popupSucesso->Controls->Add(this->popupFalha);
+			this->popupSucesso->Controls->Add(this->botãoSucesso);
+			this->popupSucesso->Controls->Add(this->label12);
+			this->popupSucesso->Controls->Add(this->label10);
+			this->popupSucesso->Location = System::Drawing::Point(200, 181);
+			this->popupSucesso->Name = L"popupSucesso";
+			this->popupSucesso->Size = System::Drawing::Size(362, 159);
+			this->popupSucesso->TabIndex = 33;
+			this->popupSucesso->TabStop = false;
+			this->popupSucesso->Text = L"Sucesso";
+			// 
+			// botãoSucesso
+			// 
+			this->botãoSucesso->Location = System::Drawing::Point(128, 116);
+			this->botãoSucesso->Name = L"botãoSucesso";
+			this->botãoSucesso->Size = System::Drawing::Size(75, 23);
+			this->botãoSucesso->TabIndex = 33;
+			this->botãoSucesso->Text = L"OK =)";
+			this->botãoSucesso->UseVisualStyleBackColor = true;
+			this->botãoSucesso->Click += gcnew System::EventHandler(this, &telaRegistroDeFalha1::botãoSucesso_Click);
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(97, 52);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(157, 13);
+			this->label12->TabIndex = 32;
+			this->label12->Text = L"Falha cadastrada com sucesso!";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->label10->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label10->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label10->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->label10->Location = System::Drawing::Point(0, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(108, 22);
+			this->label10->TabIndex = 31;
+			this->label10->Text = L"Mantenikola";
 			// 
 			// erroMecanico
 			// 
 			this->erroMecanico->AutoSize = true;
 			this->erroMecanico->ForeColor = System::Drawing::Color::Red;
-			this->erroMecanico->Location = System::Drawing::Point(409, 131);
+			this->erroMecanico->Location = System::Drawing::Point(451, 72);
 			this->erroMecanico->Name = L"erroMecanico";
 			this->erroMecanico->Size = System::Drawing::Size(0, 13);
 			this->erroMecanico->TabIndex = 32;
@@ -220,7 +336,7 @@ namespace Mantenikola {
 			// 
 			this->labelResultadoCadastro->AutoSize = true;
 			this->labelResultadoCadastro->ForeColor = System::Drawing::Color::Blue;
-			this->labelResultadoCadastro->Location = System::Drawing::Point(253, 354);
+			this->labelResultadoCadastro->Location = System::Drawing::Point(304, 282);
 			this->labelResultadoCadastro->Name = L"labelResultadoCadastro";
 			this->labelResultadoCadastro->Size = System::Drawing::Size(0, 13);
 			this->labelResultadoCadastro->TabIndex = 31;
@@ -244,7 +360,7 @@ namespace Mantenikola {
 			// 
 			this->erroProvidencia->AutoSize = true;
 			this->erroProvidencia->ForeColor = System::Drawing::Color::Red;
-			this->erroProvidencia->Location = System::Drawing::Point(120, 269);
+			this->erroProvidencia->Location = System::Drawing::Point(228, 471);
 			this->erroProvidencia->Name = L"erroProvidencia";
 			this->erroProvidencia->Size = System::Drawing::Size(0, 13);
 			this->erroProvidencia->TabIndex = 29;
@@ -253,23 +369,24 @@ namespace Mantenikola {
 			// 
 			this->erroModoDeFalha->AutoSize = true;
 			this->erroModoDeFalha->ForeColor = System::Drawing::Color::Red;
-			this->erroModoDeFalha->Location = System::Drawing::Point(253, 215);
+			this->erroModoDeFalha->Location = System::Drawing::Point(451, 165);
 			this->erroModoDeFalha->Name = L"erroModoDeFalha";
 			this->erroModoDeFalha->Size = System::Drawing::Size(0, 13);
 			this->erroModoDeFalha->TabIndex = 28;
 			// 
 			// botãoDescartarMotor
 			// 
-			this->botãoDescartarMotor->Location = System::Drawing::Point(477, 265);
+			this->botãoDescartarMotor->ForeColor = System::Drawing::Color::Red;
+			this->botãoDescartarMotor->Location = System::Drawing::Point(562, 364);
 			this->botãoDescartarMotor->Name = L"botãoDescartarMotor";
-			this->botãoDescartarMotor->Size = System::Drawing::Size(100, 39);
+			this->botãoDescartarMotor->Size = System::Drawing::Size(121, 60);
 			this->botãoDescartarMotor->TabIndex = 27;
 			this->botãoDescartarMotor->Text = L"Descartar motor";
 			this->botãoDescartarMotor->UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(383, 341);
+			this->button1->Location = System::Drawing::Point(128, 497);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(100, 39);
 			this->button1->TabIndex = 26;
@@ -279,7 +396,7 @@ namespace Mantenikola {
 			// 
 			// botãoCadastrar
 			// 
-			this->botãoCadastrar->Location = System::Drawing::Point(120, 341);
+			this->botãoCadastrar->Location = System::Drawing::Point(528, 497);
 			this->botãoCadastrar->Name = L"botãoCadastrar";
 			this->botãoCadastrar->Size = System::Drawing::Size(100, 39);
 			this->botãoCadastrar->TabIndex = 25;
@@ -289,37 +406,39 @@ namespace Mantenikola {
 			// 
 			// cbModoDeFalha
 			// 
+			this->cbModoDeFalha->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbModoDeFalha->FormattingEnabled = true;
-			this->cbModoDeFalha->Location = System::Drawing::Point(253, 187);
+			this->cbModoDeFalha->Location = System::Drawing::Point(307, 258);
 			this->cbModoDeFalha->Name = L"cbModoDeFalha";
 			this->cbModoDeFalha->Size = System::Drawing::Size(138, 21);
 			this->cbModoDeFalha->TabIndex = 24;
+			this->cbModoDeFalha->SelectedIndexChanged += gcnew System::EventHandler(this, &telaRegistroDeFalha1::cbModoDeFalha_SelectedIndexChanged);
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(409, 187);
+			this->textBox4->Location = System::Drawing::Point(562, 259);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(121, 20);
 			this->textBox4->TabIndex = 23;
 			// 
 			// textProvidencia
 			// 
-			this->textProvidencia->Location = System::Drawing::Point(253, 249);
+			this->textProvidencia->Location = System::Drawing::Point(231, 341);
 			this->textProvidencia->Multiline = true;
 			this->textProvidencia->Name = L"textProvidencia";
-			this->textProvidencia->Size = System::Drawing::Size(203, 67);
+			this->textProvidencia->Size = System::Drawing::Size(300, 112);
 			this->textProvidencia->TabIndex = 22;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(253, 125);
+			this->textBox2->Location = System::Drawing::Point(307, 162);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(138, 20);
 			this->textBox2->TabIndex = 21;
 			// 
 			// textModelo
 			// 
-			this->textModelo->Location = System::Drawing::Point(253, 72);
+			this->textModelo->Location = System::Drawing::Point(307, 72);
 			this->textModelo->Name = L"textModelo";
 			this->textModelo->Size = System::Drawing::Size(138, 20);
 			this->textModelo->TabIndex = 20;
@@ -327,7 +446,7 @@ namespace Mantenikola {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(427, 171);
+			this->label6->Location = System::Drawing::Point(495, 262);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(36, 13);
 			this->label6->TabIndex = 19;
@@ -336,7 +455,7 @@ namespace Mantenikola {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(119, 252);
+			this->label5->Location = System::Drawing::Point(127, 388);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(101, 13);
 			this->label5->TabIndex = 18;
@@ -345,16 +464,18 @@ namespace Mantenikola {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(266, 9);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(275, 9);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(87, 13);
+			this->label4->Size = System::Drawing::Size(195, 29);
 			this->label4->TabIndex = 17;
 			this->label4->Text = L"Registro de falha";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(123, 190);
+			this->label3->Location = System::Drawing::Point(153, 258);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(75, 13);
 			this->label3->TabIndex = 16;
@@ -363,7 +484,7 @@ namespace Mantenikola {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(144, 128);
+			this->label7->Location = System::Drawing::Point(174, 159);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(54, 13);
 			this->label7->TabIndex = 15;
@@ -372,7 +493,7 @@ namespace Mantenikola {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(155, 75);
+			this->label8->Location = System::Drawing::Point(194, 75);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(34, 13);
 			this->label8->TabIndex = 14;
@@ -382,7 +503,7 @@ namespace Mantenikola {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(625, 388);
+			this->ClientSize = System::Drawing::Size(784, 561);
 			this->Controls->Add(this->telaRegistroDeFalha2);
 			this->Controls->Add(this->tabelaMotores);
 			this->Controls->Add(this->botãoCancelar);
@@ -396,6 +517,10 @@ namespace Mantenikola {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tabelaMotores))->EndInit();
 			this->telaRegistroDeFalha2->ResumeLayout(false);
 			this->telaRegistroDeFalha2->PerformLayout();
+			this->popupFalha->ResumeLayout(false);
+			this->popupFalha->PerformLayout();
+			this->popupSucesso->ResumeLayout(false);
+			this->popupSucesso->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -403,8 +528,10 @@ namespace Mantenikola {
 #pragma endregion
 	private: System::Void telaRegistroDeFalha1_Load(System::Object^  sender, System::EventArgs^  e) {
 		telaRegistroDeFalha2->Hide();
-		AllocConsole();
-		freopen("CONOUT$", "w", stdout);
+		popupFalha->Hide();
+		popupSucesso->Hide();
+		//AllocConsole();
+		//freopen("CONOUT$", "w", stdout);
 		
 		ControladorRegistroDeFalha::materializarModosDeFalha();
 		for (int i = 0; i < ControladorRegistroDeFalha::getModosDeFalha().size(); i++) {
@@ -428,6 +555,8 @@ namespace Mantenikola {
 	}
 	private: System::Void botãoContinuar_Click(System::Object^  sender, System::EventArgs^  e) {
 		telaRegistroDeFalha2->Show();
+		label6->Hide();
+		textBox4->Hide();
 		textModelo->Text = tabelaMotores->SelectedRows[0]->Cells[0]->Value->ToString() + " " + tabelaMotores->SelectedRows[0]->Cells[1]->Value->ToString();
 	}
 
@@ -463,16 +592,31 @@ namespace Mantenikola {
 			descricaoOutro = msclr::interop::marshal_as<string>(textBox4->Text);
 
 			if (ControladorRegistroDeFalha::updateFalha(nSerie, modelo, dataDeEntrada, providencia, modoDeFalha, mecanico, descricaoOutro)) {
-				labelResultadoCadastro->Text = "Falha Registrada! =)";
-				this->Close();
+				popupSucesso->Show();
 			
 			}
 			else {
-				labelResultadoCadastro->Text = "Falha NÃO Registrada! =(";
+				popupFalha->Show();
 			}
 
 		}
 
 	}
+private: System::Void cbModoDeFalha_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (cbModoDeFalha->Text == "Outros" || cbModoDeFalha->Text == "outros") {
+		label6->Show();
+		textBox4->Show();
+	}
+	else {
+		label6->Hide();
+		textBox4->Hide();
+	}
+}
+private: System::Void botãoSucesso_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
+}
+private: System::Void botãoFalha_Click(System::Object^  sender, System::EventArgs^  e) {
+	popupFalha->Hide();
+}
 };
 }

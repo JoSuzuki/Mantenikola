@@ -41,6 +41,8 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Button^  botãoRelatórios;
 	private: System::Windows::Forms::Button^  botãoRegistroDeFalha;
 	private: System::Windows::Forms::Button^  botãoSair;
+	private: System::Windows::Forms::Label^  labelMantenikola;
+	private: System::Windows::Forms::Label^  label1;
 	protected:
 
 	private:
@@ -56,18 +58,20 @@ namespace Mantenikola {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->SuspendLayout();
 			this->botãoCadastroMotor = (gcnew System::Windows::Forms::Button());
 			this->botãoRelatórios = (gcnew System::Windows::Forms::Button());
 			this->botãoRegistroDeFalha = (gcnew System::Windows::Forms::Button());
 			this->botãoSair = (gcnew System::Windows::Forms::Button());
+			this->labelMantenikola = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->SuspendLayout();
 			// 
 			// botãoCadastroMotor
 			// 
 			this->botãoCadastroMotor->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(192)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->botãoCadastroMotor->FlatAppearance->MouseDownBackColor = System::Drawing::Color::Blue;
-			this->botãoCadastroMotor->Location = System::Drawing::Point(12, 210);
+			this->botãoCadastroMotor->Location = System::Drawing::Point(309, 161);
 			this->botãoCadastroMotor->Name = L"botãoCadastroMotor";
 			this->botãoCadastroMotor->Size = System::Drawing::Size(158, 111);
 			this->botãoCadastroMotor->TabIndex = 0;
@@ -77,7 +81,7 @@ namespace Mantenikola {
 			// 
 			// botãoRelatórios
 			// 
-			this->botãoRelatórios->Location = System::Drawing::Point(12, 12);
+			this->botãoRelatórios->Location = System::Drawing::Point(12, 161);
 			this->botãoRelatórios->Name = L"botãoRelatórios";
 			this->botãoRelatórios->Size = System::Drawing::Size(158, 111);
 			this->botãoRelatórios->TabIndex = 1;
@@ -87,7 +91,7 @@ namespace Mantenikola {
 			// 
 			// botãoRegistroDeFalha
 			// 
-			this->botãoRegistroDeFalha->Location = System::Drawing::Point(221, 12);
+			this->botãoRegistroDeFalha->Location = System::Drawing::Point(614, 161);
 			this->botãoRegistroDeFalha->Name = L"botãoRegistroDeFalha";
 			this->botãoRegistroDeFalha->Size = System::Drawing::Size(158, 111);
 			this->botãoRegistroDeFalha->TabIndex = 2;
@@ -97,7 +101,7 @@ namespace Mantenikola {
 			// 
 			// botãoSair
 			// 
-			this->botãoSair->Location = System::Drawing::Point(221, 210);
+			this->botãoSair->Location = System::Drawing::Point(309, 390);
 			this->botãoSair->Name = L"botãoSair";
 			this->botãoSair->Size = System::Drawing::Size(158, 111);
 			this->botãoSair->TabIndex = 3;
@@ -105,11 +109,37 @@ namespace Mantenikola {
 			this->botãoSair->UseVisualStyleBackColor = true;
 			this->botãoSair->Click += gcnew System::EventHandler(this, &MenuPrincipal::botãoSair_Click);
 			// 
+			// labelMantenikola
+			// 
+			this->labelMantenikola->AutoSize = true;
+			this->labelMantenikola->BackColor = System::Drawing::SystemColors::AppWorkspace;
+			this->labelMantenikola->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->labelMantenikola->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->labelMantenikola->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->labelMantenikola->ForeColor = System::Drawing::SystemColors::ControlText;
+			this->labelMantenikola->Location = System::Drawing::Point(289, 9);
+			this->labelMantenikola->Name = L"labelMantenikola";
+			this->labelMantenikola->Size = System::Drawing::Size(202, 39);
+			this->labelMantenikola->TabIndex = 13;
+			this->labelMantenikola->Text = L"Mantenikola";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(519, 35);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(202, 13);
+			this->label1->TabIndex = 14;
+			this->label1->Text = L"Bem Vindo(a) ao sistema da Mantenikola!";
+			// 
 			// MenuPrincipal
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(391, 333);
+			this->ClientSize = System::Drawing::Size(784, 561);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->labelMantenikola);
 			this->Controls->Add(this->botãoSair);
 			this->Controls->Add(this->botãoRegistroDeFalha);
 			this->Controls->Add(this->botãoRelatórios);
@@ -118,6 +148,7 @@ namespace Mantenikola {
 			this->Text = L"MenuPrincipal";
 			this->Load += gcnew System::EventHandler(this, &MenuPrincipal::MenuPrincipal_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion

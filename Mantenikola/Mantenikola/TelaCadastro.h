@@ -65,6 +65,9 @@ namespace Mantenikola {
 	private: System::Windows::Forms::Button^  botãoCancelar;
 	private: System::Windows::Forms::Button^  botãoCadastrarNovaFalha;
 	private: System::Windows::Forms::Label^  label9;
+	private: System::Windows::Forms::GroupBox^  popupMotorCadastrado;
+	private: System::Windows::Forms::Button^  botãoOK;
+	private: System::Windows::Forms::Label^  label11;
 
 	private:
 		/// <summary>
@@ -79,7 +82,6 @@ namespace Mantenikola {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->SuspendLayout();
 			this->botãoRetornar = (gcnew System::Windows::Forms::Button());
 			this->cbModelo = (gcnew System::Windows::Forms::ComboBox());
 			this->botãoCadastrar = (gcnew System::Windows::Forms::Button());
@@ -104,13 +106,18 @@ namespace Mantenikola {
 			this->botãoCancelar = (gcnew System::Windows::Forms::Button());
 			this->botãoCadastrarNovaFalha = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->popupMotorCadastrado = (gcnew System::Windows::Forms::GroupBox());
+			this->botãoOK = (gcnew System::Windows::Forms::Button());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->PopupMotorJaCadastrado->SuspendLayout();
-			//
+			this->popupMotorCadastrado->SuspendLayout();
+			this->SuspendLayout();
+			// 
 			// botãoRetornar
 			// 
 			this->botãoRetornar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
 			this->botãoRetornar->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->botãoRetornar->Location = System::Drawing::Point(468, 295);
+			this->botãoRetornar->Location = System::Drawing::Point(128, 486);
 			this->botãoRetornar->Name = L"botãoRetornar";
 			this->botãoRetornar->Size = System::Drawing::Size(100, 36);
 			this->botãoRetornar->TabIndex = 0;
@@ -122,16 +129,17 @@ namespace Mantenikola {
 			// 
 			this->cbModelo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->cbModelo->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbModelo->FormattingEnabled = true;
-			this->cbModelo->Location = System::Drawing::Point(214, 176);
+			this->cbModelo->Location = System::Drawing::Point(259, 292);
 			this->cbModelo->Name = L"cbModelo";
-			this->cbModelo->Size = System::Drawing::Size(215, 21);
+			this->cbModelo->Size = System::Drawing::Size(320, 21);
 			this->cbModelo->TabIndex = 1;
 			// 
 			// botãoCadastrar
 			// 
 			this->botãoCadastrar->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((System::Windows::Forms::AnchorStyles::Bottom | System::Windows::Forms::AnchorStyles::Right));
-			this->botãoCadastrar->Location = System::Drawing::Point(131, 295);
+			this->botãoCadastrar->Location = System::Drawing::Point(602, 486);
 			this->botãoCadastrar->Name = L"botãoCadastrar";
 			this->botãoCadastrar->Size = System::Drawing::Size(100, 36);
 			this->botãoCadastrar->TabIndex = 2;
@@ -143,18 +151,18 @@ namespace Mantenikola {
 			// 
 			this->label1->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(237, 9);
+			this->label1->Location = System::Drawing::Point(312, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(158, 20);
+			this->label1->Size = System::Drawing::Size(238, 29);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Cadastro de Motores";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(125, 179);
+			this->label2->Location = System::Drawing::Point(125, 295);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(42, 13);
 			this->label2->TabIndex = 4;
@@ -163,7 +171,7 @@ namespace Mantenikola {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(101, 122);
+			this->label3->Location = System::Drawing::Point(101, 172);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(87, 13);
 			this->label3->TabIndex = 5;
@@ -182,7 +190,7 @@ namespace Mantenikola {
 			// 
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(274, 88);
+			this->label5->Location = System::Drawing::Point(349, 88);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(121, 13);
 			this->label5->TabIndex = 7;
@@ -191,7 +199,7 @@ namespace Mantenikola {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(125, 227);
+			this->label6->Location = System::Drawing::Point(125, 414);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(60, 13);
 			this->label6->TabIndex = 8;
@@ -201,29 +209,31 @@ namespace Mantenikola {
 			// 
 			this->cbProprietario->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->cbProprietario->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->cbProprietario->FormattingEnabled = true;
-			this->cbProprietario->Location = System::Drawing::Point(214, 224);
+			this->cbProprietario->Location = System::Drawing::Point(259, 411);
 			this->cbProprietario->Name = L"cbProprietario";
-			this->cbProprietario->Size = System::Drawing::Size(215, 21);
+			this->cbProprietario->Size = System::Drawing::Size(320, 21);
 			this->cbProprietario->TabIndex = 9;
 			// 
 			// textoNumeroDeSerie
 			// 
 			this->textoNumeroDeSerie->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->textoNumeroDeSerie->Location = System::Drawing::Point(214, 65);
+			this->textoNumeroDeSerie->Location = System::Drawing::Point(259, 65);
 			this->textoNumeroDeSerie->Name = L"textoNumeroDeSerie";
-			this->textoNumeroDeSerie->Size = System::Drawing::Size(215, 20);
+			this->textoNumeroDeSerie->Size = System::Drawing::Size(320, 20);
 			this->textoNumeroDeSerie->TabIndex = 10;
 			// 
 			// textoDataDeEntrada
 			// 
 			this->textoDataDeEntrada->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->textoDataDeEntrada->Location = System::Drawing::Point(214, 122);
+			this->textoDataDeEntrada->Location = System::Drawing::Point(259, 172);
 			this->textoDataDeEntrada->Name = L"textoDataDeEntrada";
-			this->textoDataDeEntrada->Size = System::Drawing::Size(215, 20);
+			this->textoDataDeEntrada->Size = System::Drawing::Size(320, 20);
 			this->textoDataDeEntrada->TabIndex = 11;
+			this->textoDataDeEntrada->TextChanged += gcnew System::EventHandler(this, &TelaCadastro::textoDataDeEntrada_TextChanged);
 			// 
 			// labelMantenikola
 			// 
@@ -245,7 +255,7 @@ namespace Mantenikola {
 			this->labelErroNSerie->AutoEllipsis = true;
 			this->labelErroNSerie->AutoSize = true;
 			this->labelErroNSerie->ForeColor = System::Drawing::Color::Red;
-			this->labelErroNSerie->Location = System::Drawing::Point(380, 68);
+			this->labelErroNSerie->Location = System::Drawing::Point(599, 68);
 			this->labelErroNSerie->Name = L"labelErroNSerie";
 			this->labelErroNSerie->Size = System::Drawing::Size(0, 13);
 			this->labelErroNSerie->TabIndex = 13;
@@ -257,7 +267,7 @@ namespace Mantenikola {
 			this->labelErroDataEntrada->AutoEllipsis = true;
 			this->labelErroDataEntrada->AutoSize = true;
 			this->labelErroDataEntrada->ForeColor = System::Drawing::Color::Red;
-			this->labelErroDataEntrada->Location = System::Drawing::Point(380, 129);
+			this->labelErroDataEntrada->Location = System::Drawing::Point(599, 175);
 			this->labelErroDataEntrada->Name = L"labelErroDataEntrada";
 			this->labelErroDataEntrada->Size = System::Drawing::Size(0, 13);
 			this->labelErroDataEntrada->TabIndex = 14;
@@ -269,7 +279,7 @@ namespace Mantenikola {
 			this->labelErroModelo->AutoEllipsis = true;
 			this->labelErroModelo->AutoSize = true;
 			this->labelErroModelo->ForeColor = System::Drawing::Color::Red;
-			this->labelErroModelo->Location = System::Drawing::Point(380, 179);
+			this->labelErroModelo->Location = System::Drawing::Point(599, 295);
 			this->labelErroModelo->Name = L"labelErroModelo";
 			this->labelErroModelo->Size = System::Drawing::Size(0, 13);
 			this->labelErroModelo->TabIndex = 15;
@@ -281,7 +291,7 @@ namespace Mantenikola {
 			this->labelErroProprietario->AutoEllipsis = true;
 			this->labelErroProprietario->AutoSize = true;
 			this->labelErroProprietario->ForeColor = System::Drawing::Color::Red;
-			this->labelErroProprietario->Location = System::Drawing::Point(380, 227);
+			this->labelErroProprietario->Location = System::Drawing::Point(599, 414);
 			this->labelErroProprietario->Name = L"labelErroProprietario";
 			this->labelErroProprietario->Size = System::Drawing::Size(0, 13);
 			this->labelErroProprietario->TabIndex = 16;
@@ -289,7 +299,7 @@ namespace Mantenikola {
 			// labelMotorCadastrado
 			// 
 			this->labelMotorCadastrado->AutoSize = true;
-			this->labelMotorCadastrado->Location = System::Drawing::Point(244, 266);
+			this->labelMotorCadastrado->Location = System::Drawing::Point(244, 316);
 			this->labelMotorCadastrado->Name = L"labelMotorCadastrado";
 			this->labelMotorCadastrado->Size = System::Drawing::Size(0, 13);
 			this->labelMotorCadastrado->TabIndex = 17;
@@ -298,7 +308,7 @@ namespace Mantenikola {
 			// 
 			this->label7->Anchor = System::Windows::Forms::AnchorStyles::Top;
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(274, 145);
+			this->label7->Location = System::Drawing::Point(349, 195);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(107, 13);
 			this->label7->TabIndex = 18;
@@ -312,9 +322,9 @@ namespace Mantenikola {
 			this->PopupMotorJaCadastrado->Controls->Add(this->botãoCancelar);
 			this->PopupMotorJaCadastrado->Controls->Add(this->botãoCadastrarNovaFalha);
 			this->PopupMotorJaCadastrado->Controls->Add(this->label9);
-			this->PopupMotorJaCadastrado->Location = System::Drawing::Point(86, 32);
+			this->PopupMotorJaCadastrado->Location = System::Drawing::Point(159, 121);
 			this->PopupMotorJaCadastrado->Name = L"PopupMotorJaCadastrado";
-			this->PopupMotorJaCadastrado->Size = System::Drawing::Size(491, 247);
+			this->PopupMotorJaCadastrado->Size = System::Drawing::Size(515, 266);
 			this->PopupMotorJaCadastrado->TabIndex = 19;
 			this->PopupMotorJaCadastrado->TabStop = false;
 			this->PopupMotorJaCadastrado->Text = L"Erro: Motor já cadastrado";
@@ -362,11 +372,48 @@ namespace Mantenikola {
 			this->label9->TabIndex = 4;
 			this->label9->Text = L"Este motor já foi cadastrado no sistema!";
 			// 
+			// popupMotorCadastrado
+			// 
+			this->popupMotorCadastrado->AutoSize = true;
+			this->popupMotorCadastrado->BackColor = System::Drawing::SystemColors::Control;
+			this->popupMotorCadastrado->Controls->Add(this->botãoOK);
+			this->popupMotorCadastrado->Controls->Add(this->label11);
+			this->popupMotorCadastrado->Location = System::Drawing::Point(128, 134);
+			this->popupMotorCadastrado->Name = L"popupMotorCadastrado";
+			this->popupMotorCadastrado->Size = System::Drawing::Size(590, 247);
+			this->popupMotorCadastrado->TabIndex = 20;
+			this->popupMotorCadastrado->TabStop = false;
+			this->popupMotorCadastrado->Text = L"Motor Cadastrado";
+			this->popupMotorCadastrado->Visible = false;
+			// 
+			// botãoOK
+			// 
+			this->botãoOK->Location = System::Drawing::Point(242, 150);
+			this->botãoOK->Name = L"botãoOK";
+			this->botãoOK->Size = System::Drawing::Size(107, 40);
+			this->botãoOK->TabIndex = 5;
+			this->botãoOK->Text = L"OK";
+			this->botãoOK->UseVisualStyleBackColor = true;
+			this->botãoOK->Click += gcnew System::EventHandler(this, &TelaCadastro::botãoOK_Click);
+			// 
+			// label11
+			// 
+			this->label11->AutoEllipsis = true;
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(6, 36);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(578, 29);
+			this->label11->TabIndex = 4;
+			this->label11->Text = L"O motor foi cadastrado no sistema com sucesso!";
+			// 
 			// TelaCadastro
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(634, 370);
+			this->ClientSize = System::Drawing::Size(784, 561);
+			this->Controls->Add(this->popupMotorCadastrado);
 			this->Controls->Add(this->PopupMotorJaCadastrado);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->labelMotorCadastrado);
@@ -392,6 +439,8 @@ namespace Mantenikola {
 			this->Load += gcnew System::EventHandler(this, &TelaCadastro::TelaCadastro_Load);
 			this->PopupMotorJaCadastrado->ResumeLayout(false);
 			this->PopupMotorJaCadastrado->PerformLayout();
+			this->popupMotorCadastrado->ResumeLayout(false);
+			this->popupMotorCadastrado->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -413,7 +462,7 @@ namespace Mantenikola {
 
 			
 			if (ControladorCadastroDeMotor::cadastrarMotor(nSerie, modelo, data, proprietario)) {
-				labelMotorCadastrado->Text = "Motor Cadastrado!";
+				popupMotorCadastrado->Show();
 			}
 			else {
 				PopupMotorJaCadastrado->Show();
@@ -422,8 +471,8 @@ namespace Mantenikola {
 	}
 	private: System::Void TelaCadastro_Load(System::Object^  sender, System::EventArgs^  e) {
 		PopupMotorJaCadastrado->Hide();
-		AllocConsole();
-		freopen("CONOUT$", "w", stdout);
+		//AllocConsole();
+		//freopen("CONOUT$", "w", stdout);
 		
 		ControladorCadastroDeMotor::materializarModelos();
 		for (int i = 0; i < ControladorCadastroDeMotor::getModelos().size(); i++) {
@@ -462,7 +511,7 @@ namespace Mantenikola {
 		else { 
 			try {
 				nSerie = _int64::Parse(textoNumeroDeSerie->Text);
-				if ((nSerie / 100000) % 100 > 52 || nSerie > 100000000000 || nSerie < 10000000000) {
+				if ((nSerie / 100000) % 100 > 52 || nSerie >= 100000000000 || nSerie < 10000000000) {
 					labelErroNSerie->Text = "Número de Série inválido (fora da faixa)";
 					return FALSE;
 				}
@@ -515,6 +564,7 @@ namespace Mantenikola {
 	private: System::Void botãoCancelar_Click(System::Object^  sender, System::EventArgs^  e) {
 		PopupMotorJaCadastrado->Hide();
 	}
+
 	private: System::Void botãoCadastrarNovaFalha_Click(System::Object^  sender, System::EventArgs^  e) {
 		_int64 nSerie;
 		string data, modelo;
@@ -530,5 +580,15 @@ namespace Mantenikola {
 		registroFalha->ShowDialog();
 		this->Close();
 	}
+private: System::Void botãoOK_Click(System::Object^  sender, System::EventArgs^  e) {
+	this->Close();
+}
+private: System::Void textoDataDeEntrada_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (textoDataDeEntrada->Text->Length == 2 || textoDataDeEntrada->Text->Length == 5) {
+		int tam = textoDataDeEntrada->Text->Length;
+		textoDataDeEntrada->Text = textoDataDeEntrada->Text + "/";
+		textoDataDeEntrada->SelectionStart = tam + 1;
+	}
+}
 };
 }
